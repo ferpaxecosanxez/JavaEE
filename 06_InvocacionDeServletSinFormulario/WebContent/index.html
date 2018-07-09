@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Fondo Colores</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Color de fondo dinámico</h1>
+	</header>
+	
+	<div class="main">
+		<p>Seleccione un color para el fondo de la página a invocar:</p>
+		
+		<!-- Llamar a un Servlet mediante un link -->
+		<a href="ColoreaFondo?color=blue">Azul</a>
+		<br/><br/>
+		
+		<!-- Llamar a un Servlet mediante un botón -->
+		<input class="botonMedio" type="submit" value="Rojo" 
+			onClick="window.location.href='ColoreaFondo?color=red'"/>
+		
+		<br/><br/>
+		<input class="botonMedio" type="submit" value="Amarillo" 
+			onClick="window.location.href='ColoreaFondo?color=yellow'"/>
+	</div>
+</body>
+</html>

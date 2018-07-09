@@ -1,0 +1,49 @@
+body{
+	text-align: center;
+	margin: auto;
+	width: 100%;
+}
+
+header {
+	background: #313630;
+	color: #FFFFFF;
+	padding: 20px 0;
+}
+
+span{
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.botonMedio {
+ 	background: #313630;
+ 	border: 1px solid #313630;
+ 	border-radius: 5px;
+ 	color: #FFFFFF;
+ 	font-weight: bold; 	
+	padding: 10px 20px;
+	text-align: center;	
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 100px;
+}
+	.botonMedio:hover {
+		background: rgba(49, 54, 48, .8);
+		border: 1px solid #5A5E59;
+	}
+
+.dato{
+	padding: 5px;
+	width: 200px;
+}
+
+.datoComboBox {
+	padding: 5px;
+	width: 212px;
+}
+
+.main {
+	padding: 50px 0;
+}
