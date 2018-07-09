@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Opciones de formulario</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Opciones dentro de un formulario</h1>
+	</header>
+	
+	<div class="main">
+		<form id="form-05" action="LeerParametros"
+			method="get" onsubmit="return validaFormulario('form-05')">
+			<span>Introduzca su nombre:</span>
+			<input class="dato" type="text" name="nombre"/>
+			
+			<br/><br/>
+			<span>Edad:</span>
+			<input class="dato" type="number" max="100" min="18" name="edad"/>
+			
+			<br/><br/>
+			<span>Fecha:</span>
+			<input class="dato" type="date" name="fecha"/>
+			
+			<br/><br/>
+			<span>Zona:</span>
+			<select	class="datoComboBox" name="zona" size="1">
+				<option value="centro">Madrid</option>
+				<option value="centro" selected>Ávila</option>
+				<option value="sur">Sevilla</option>
+				<option value="norte">Santander</option>
+			</select>
+			
+			<br/><br/>
+			<h2>Temas:</h2>
+			<div>
+				<span>Historia</span>
+				<input type="checkbox" name="tema" value="historia" checked/>
+				<span>Ciencias</span>
+				<input type="checkbox" name="tema" value="ciencias"/>
+				<span>Cine</span>
+				<input type="checkbox" name="tema" value="cine"/>
+			</div>
+			
+			<br/><br/>
+			<h2>Género:</h2>
+			<div>
+				<span>Hombre</span>
+				<input type="radio" name="genero" value="Sr." checked/>
+				<span>Mujer</span>
+				<input type="radio"	name="genero" value="Sra."/>	
+			</div>		
+			
+			<br/><br/>
+			<input class="botonMedio" type="submit" value="Enviar" />
+		</form>
+	</div>
+	
+	<script src="js/functions.js"></script>
+</body>
+
+</html>
+
