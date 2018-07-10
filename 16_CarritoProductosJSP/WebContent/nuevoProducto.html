@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Producto Nuevo</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Agregar un nuevo producto:</h1>
+	</header>
+	
+	<div class="main">
+		<form action="Agregar" method="post"
+			onsubmit="return validaFormulario(this)">
+			<span>Nombre:</span>
+			<input class="dato" type="text" name="nombre"/>
+			
+			<br/><br/>
+			<span>Precio:</span>
+			<input class="dato" type="number" step="0.01" name="precio"/>
+			
+			<br/><br/>
+			<span>Categoría:</span>
+			<input class="dato" type="text" name="categoria"/>
+			
+			<div class="formFooter">
+				<input class="botonMedio" type="submit" value="Guardar"/>
+				
+				<input class="botonMedio" type="button" value="Volver" 
+					onClick="window.location.href='index.html'"/>
+			</div>
+		</form>
+	</div>
+	
+	<script src="js/functions.js"></script>
+</body>
+</html>
