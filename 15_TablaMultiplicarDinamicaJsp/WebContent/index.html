@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Tabla Multiplicar</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Resultado de multiplicaciones</h1>
+	</header>
+	
+	<div class="main">
+		<form action="CalculaTablaMultiplicar" method="post"
+			onsubmit="return validaFormulario(this)">
+			<span>Introduce número:</span>
+			<input class="dato" type="text" name="numero" />
+			
+			<br/><br/>
+			<input class="botonMedio" type="submit" value="Calcular" />
+		</form>
+	</div>
+	
+	<script src="js/functions.js"></script>
+</body>
+
+</html>
