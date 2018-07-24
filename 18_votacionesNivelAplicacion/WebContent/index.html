@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Votos App</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Votaciones</h1>
+	</header>
+	
+	<div class="main">
+		<p>Elija su voto:</p>	
+		
+		<form action="CuentaVotos" method="post"
+			onsubmit="return validaFormulario(this)">
+			<div class="opcionesRadio otraClase">
+				<span>Si</span>
+				<input type="radio" name="voto" value="si"/>
+				
+				<br/><br/>
+				<span>No</span>
+				<input type="radio"	name="voto" value="no"/>	
+			</div>
+			
+			<br/><br/>
+			<div class="formFooter">
+				<input class="botonLargo" type="submit" value="Votar"/>
+				
+				<input class="botonLargo" type="button" value="Ver Resultados"
+					onClick="window.location.href='resultados.jsp'"/>
+			</div>
+		</form>
+	</div>
+	
+	<script src="js/functions.js"></script>
+</body>
+</html>
