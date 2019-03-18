@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * A partir de este ejercicio, todos los proyectos contendrán el fichero
  * web.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamos
  * a usar páginas HTML5 y estilos CSS, a medida que avancemos en los ejercicios,
- * el CSS irá creciendo.
+ * el CSS irá creciendo (Por el momento solo afecta a los ficheros html).
  * <p>
  * Definimos en fichero web.xml la página de inicio del proyecto, en nuestro
  * caso index.html
