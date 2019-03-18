@@ -1,3 +1,11 @@
+/**
+ * Valida si una etiqueta de tipo "input" contiene valor.
+ * 
+ * @param idForm
+ *            Identificador del formulario definido.
+ * @returns true, si todo a ido bien,<br>
+ *          false, en caso contrario.
+ */
 function validaFormulario(idForm) {
 	var form = document.getElementById(idForm);
 	var msg = "";
@@ -13,8 +21,9 @@ function validaFormulario(idForm) {
 			if (itemForm.type == "text"
 					&& (value == null || value.length == 0 || /^\s+$/.test(value))) {
 				numErr = 1;
-				msg += "Los campos de texto no pueden quedar vacíos.\n\n";
+				msg += "Los campos de texto no pueden quedar vac\u00EDos.\n\n";
 			}
+			
 			if (itemForm.type == "number"
 					&& (value == null || value.length == 0 || isNaN(value))) {
 				numErr = 1;
