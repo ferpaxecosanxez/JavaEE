@@ -33,6 +33,10 @@ span {
 		border: 1px solid #5A5E59;
 		cursor: pointer;
 	}
+	/* Quitar marco azul o de punto cuando hacemos click */
+	.botonMedio:focus {
+		outline: 0;
+	}
 
 .dato {
 	padding: 5px;

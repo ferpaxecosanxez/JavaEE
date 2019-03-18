@@ -20,11 +20,15 @@ import javax.servlet.http.HttpServletResponse;
  * <P>
  * A partir de este ejercicio, todos los proyectos contendrán el fichero
  * web.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamos
- * a usar páginas HTML5 y estilos CSS, a medida que avancemos en los ejercicios,
- * el CSS irá creciendo (Por el momento solo afecta a los ficheros html).
+ * a usar páginas HTML5, estilos CSS y validaciones JS, a medida que avancemos
+ * en los ejercicios, el CSS y JS irá creciendo (Por el momento solo afectan a
+ * los ficheros html).
  * <p>
  * Definimos en fichero web.xml la página de inicio del proyecto, en nuestro
  * caso index.html
+ * <p>
+ * Añadimos validación JS sobre el campo texto y la manera de invocar la
+ * validación es a travez del id que damos al formulario definido en index.html.
  * 
  * @author fips
  *

@@ -13,7 +13,8 @@
 	</header>
 	
 	<div class="main">
-		<form action="SaludoPersonal" method="post">
+		<form id="miFormulario" action="SaludoPersonal"
+			method="post" onsubmit="return validaFormulario('miFormulario')">
 			<span>Introduce tu nombre:</span>
 			<input class="dato" type="text" name="nomPersona" />
 			<br />
@@ -21,6 +22,8 @@
 			<input class="botonMedio" type="submit" value="Enviar" />
 		</form>
 	</div>
+	
+	<script src="js/functions.js"></script>
 </body>
 
 </html>
