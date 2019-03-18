@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que genera una respuesta simple y muestra el mensaje de "hola mundo".
+ * Servlet simple que genera y escupe código html mostrando el mensaje de "hola
+ * mundo".
  * <p>
- * Para ejecutar la aplicación debe ejecutarse directamente el servlet, porque
- * el proyecto web no contiene el fichero web.xml, el cual no es necesario para
- * este ejercicio.
+ * Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat
+ * ya que el proyecto web no contiene el fichero web.xml
  * 
  * @author fips
  *
