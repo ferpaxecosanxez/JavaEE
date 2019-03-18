@@ -12,10 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que muestra un mensaje de saludo personalizado en función de que
  * nombre escriba el usuario en el formulario, este está definido en el fichero
- * index.html
+ * index.html, este debe tener la etiqueta <meta charset="ISO-8859-1"> para los
+ * caractéres en español.
  * <p>
- * A partir de este proyecto o ejercicio empezamos a usar el fichero web.xml, el
- * cual nos permite ejecutar la aplicación desde el propio proyecto.
+ * Enviar dato a travez de formulario de tipo POST. Con el tipo POST estamos
+ * ocultando la información que enviamos.
+ * <P>
+ * A partir de este ejercicio, todos los proyectos contendrán el fichero
+ * web.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamos
+ * a usar páginas HTML5 y estilos CSS, a medida que avancemos en los ejercicios,
+ * el CSS irá creciendo.
+ * <p>
+ * Definimos en fichero web.xml la página de inicio del proyecto, en nuestro
+ * caso index.html
  * 
  * @author fips
  *
