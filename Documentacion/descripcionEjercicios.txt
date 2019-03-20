@@ -1,0 +1,22 @@
+Ejercicio 01:
+Servlet simple que genera y escupe código html mostrando el mensaje de "hola mundo".
+Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat ya que el proyecto web no contiene el fichero web.xml.
+
+Ejercicio 02:
+Servlet simple que genera y escupe código html. El contenido html es una tabla que contiene las multiplicaciones del 1 al 10.
+Agregamos indentación en el código html que escupe, esta acción se realiza para cuando hacemos Ctrl + U en el navegador, este nos muestre un código legible y ordenado.
+Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat ya que el proyecto web no contiene el fichero web.xml.
+
+Ejercicio 03:
+Servlet que muestra un mensaje de saludo personalizado en función del nombre que escriba el usuario en el formulario, este está definido en el fichero index.html, este debe tener la etiqueta <meta charset="ISO-8859-1"> para los caractéres en español.
+Enviar dato a travez de formulario de tipo POST. Con el tipo POST estamos ocultando la información que enviamos.
+A partir de este ejercicio, todos los proyectos contendrán el ficheroweb.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamosa usar páginas HTML5, estilos CSS y validaciones JS, a medida que avancemosen los ejercicios, el CSS y JS irá creciendo (Por el momento solo afectan a los ficheros html).
+Definimos en fichero web.xml la página de inicio del proyecto, en nuestro caso index.html
+Añadimos validación JS sobre el campo texto y la manera de invocar la validación es a travez del id que damos al formulario definido en index.html.
+
+Ejercicio 04:
+Enviar dato a travez de formulario de tipo POST y usamos atributo ONSUBMIT del formulario definido en index.html.
+Servlet que muestra las multiplicaciones del 1 al 10 de un número introducido por el usuario en el formulario definido en el fichero index.html. 
+Agregamos botón para volver, es código JS que nos envía a la página de inicio. Se añade validación de dato numérico en formulario mediante JS, al igual que en el ejercicio 04 los ficheros CSS y JS solo afectan a los ficheros html.
+
+
