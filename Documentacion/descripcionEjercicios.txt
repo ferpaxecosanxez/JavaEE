@@ -19,4 +19,11 @@ Enviar dato a travez de formulario de tipo POST y usamos atributo ONSUBMIT del f
 Servlet que muestra las multiplicaciones del 1 al 10 de un número introducido por el usuario en el formulario definido en el fichero index.html. 
 Agregamos botón para volver, es código JS que nos envía a la página de inicio. Se añade validación de dato numérico en formulario mediante JS, al igual que en el ejercicio 04 los ficheros CSS y JS solo afectan a los ficheros html.
 
+Ejercicio 05:
+Servlet que muestra información capturada de formulario implementado enfichero index.html, el formulario contiene validaciones propias, es decir, en la propia etiqueta INPUT.
+Los TYPE de INPUT que usamos son: text, number, date, checkbox y radio. Para el ComboBox hemos usado el tag select.
+Enviar dato a travéz de formulario de tipo GET y usamos atributo ONSUBMIT. El modo GET muestra los valores que se están enviando en la URL, es decir, son visibles.
+Usamos función JS que contiene validaciones sobre los campos del formulario.
+Se añade filtro en el campo numérico, en concreto, de mínimo y máximo de edad, definido en la propia etiqueta INPUT.
+Todas las páginas que no tienen CSS ni JS son las que genera y escupe el propio Servlet.
 

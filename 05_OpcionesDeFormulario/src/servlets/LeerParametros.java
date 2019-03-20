@@ -14,8 +14,20 @@ import javax.servlet.http.HttpServletResponse;
  * fichero index.html, el formulario contiene validaciones propias, es decir, en
  * la propia etiqueta INPUT.
  * <p>
- * La información se envía mediante GET. Usamos función JS para validar campos
- * del formulario.
+ * Los TYPE de INPUT que usamos son: text, number, date, checkbox y radio. Para
+ * el ComboBox hemos usado el tag select.
+ * <p>
+ * Enviar dato a travéz de formulario de tipo GET y usamos atributo ONSUBMIT. El
+ * modo GET muestra los valores que se están enviando en la URL, es decir, son
+ * visibles.
+ * <p>
+ * Usamos función JS que contiene validaciones sobre los campos del formulario.
+ * <p>
+ * Se añade filtro en el campo numérico, en concreto, de mínimo y máximo de
+ * edad, definido en la propia etiqueta INPUT.
+ * <p>
+ * Todas las páginas que no tienen CSS ni JS son las que genera y escupe el
+ * propio Servlet.
  * 
  * @author fips
  *

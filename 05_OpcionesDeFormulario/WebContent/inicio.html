@@ -13,21 +13,21 @@
 	</header>
 	
 	<div class="main">
-		<form id="form-05" action="LeerParametros"
-			method="get" onsubmit="return validaFormulario('form-05')">
+		<form id="miFormulario" action="LeerParametros"
+			method="get" onsubmit="return validaFormulario('miFormulario')">
 			<span>Introduzca su nombre:</span>
 			<input class="dato" type="text" name="nombre"/>
 			
 			<br/><br/>
-			<span>Edad:</span>
+			<span>Introduzca su edad:</span>
 			<input class="dato" type="number" max="100" min="18" name="edad"/>
 			
 			<br/><br/>
-			<span>Fecha:</span>
+			<span>Introduzca su fecha de nacimiento:</span>
 			<input class="dato" type="date" name="fecha"/>
 			
 			<br/><br/>
-			<span>Zona:</span>
+			<span>Seleccione una zona:</span>
 			<select	class="datoComboBox" name="zona" size="1">
 				<option value="centro">Madrid</option>
 				<option value="centro" selected>Ávila</option>
@@ -36,7 +36,7 @@
 			</select>
 			
 			<br/><br/>
-			<h2>Temas:</h2>
+			<h2>Seleccione los temas que le interesa:</h2>
 			<div>
 				<span>Historia</span>
 				<input type="checkbox" name="tema" value="historia" checked/>
@@ -47,7 +47,7 @@
 			</div>
 			
 			<br/><br/>
-			<h2>Género:</h2>
+			<h2>Seleccione su género:</h2>
 			<div>
 				<span>Hombre</span>
 				<input type="radio" name="genero" value="Sr." checked/>
