@@ -17,17 +17,18 @@ function validaFormulario(idForm) {
 		// Capturar etiqueta: <input>
 		if (itemForm.tagName != null && itemForm.tagName == "INPUT") {
 			var value = itemForm.value;
+			var field = itemForm.name;
 
 			if (itemForm.type == "text"
 					&& (value == null || value.length == 0 || /^\s+$/.test(value))) {
 				numErr = 1;
-				msg += "Los campos de texto no pueden quedar vac\u00EDos.\n\n";
+				msg += "El campo " + field +" est\u00E1 vac\u00CDo.\n\n";
 			}
 			
 			if (itemForm.type == "number"
 					&& (value == null || value.length == 0 || isNaN(value))) {
 				numErr = 1;
-				msg += "Lo campos num\u00E9ricos deben contener n\u00FAmeros.";
+				msg += "El campo " + field + " debe contener n\u00FAmeros.\n\n";
 			}
 		}
 	}

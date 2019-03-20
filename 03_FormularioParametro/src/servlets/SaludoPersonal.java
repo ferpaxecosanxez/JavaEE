@@ -39,7 +39,7 @@ public class SaludoPersonal extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nomPersona = request.getParameter("nomPersona");
+		String nomPersona = request.getParameter("nombre");
 
 		response.setContentType("text/html");
 		try (PrintWriter out = response.getWriter()) {
