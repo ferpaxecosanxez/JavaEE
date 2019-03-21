@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet simple que genera y escupe c骴igo html. El contenido html es una
+ * Servlet simple que genera y escupe c贸digo html. El contenido html es una
  * tabla que contiene las multiplicaciones del 1 al 10.
  * <p>
  * Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat
  * ya que el proyecto web no contiene el fichero web.xml.
  * <p>
- * Agregamos indentaci髇 en el c骴igo html que escupe, esta acci髇 se realiza
- * para cuando hacemos Ctrl + U en el navegador, este nos muestre un c骴igo
+ * Agregamos indentaci贸n en el c贸digo html que escupe, esta acci贸n se realiza
+ * para cuando hacemos Ctrl + U en el navegador, este nos muestre un c贸digo
  * legible y ordenado.
  * 
  * @author fips
@@ -38,7 +38,7 @@ public class Multiplicaciones extends HttpServlet {
 			out.println("<!DOCTYPE html>");
 			out.println("<html lang='es'>");
 			out.println("<body>");
-			out.println("");// l飊ea en blanco.
+			out.println("");// l铆nea en blanco.
 			out.println("\t<table border='1'>");
 			for (int i = 1; i <= 10; i++) {
 				out.println("\t\t<tr>");
@@ -53,7 +53,7 @@ public class Multiplicaciones extends HttpServlet {
 						out.print("</td>");
 					}
 					
-					// Si es el 鷏timo dato que pintamos, este debe tener un salto de l韓ea.
+					// Si es el 煤ltimo dato que pintamos, este debe tener un salto de l铆nea.
 					if (j == 10) {
 						out.println("");
 					}
@@ -61,7 +61,7 @@ public class Multiplicaciones extends HttpServlet {
 				out.println("\t\t</tr>");
 			}
 			out.println("\t</table>");
-			out.println("");// l飊ea en blanco.
+			out.println("");// l铆nea en blanco.
 			out.println("</body>");
 			out.println("</html>");
 		} // Fin de try

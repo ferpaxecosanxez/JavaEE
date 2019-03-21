@@ -10,25 +10,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que muestra un mensaje de saludo personalizado en función de que
- * nombre escriba el usuario en el formulario, este está definido en el fichero
+ * Servlet que muestra un mensaje de saludo personalizado en funciÃ³n de que
+ * nombre escriba el usuario en el formulario, este estÃ¡ definido en el fichero
  * index.html, este debe tener la etiqueta <meta charset="ISO-8859-1"> para los
- * caractéres en español.
+ * caractÃ©res en espaÃ±ol.
  * <p>
  * Enviar dato a travez de formulario de tipo POST. Con el tipo POST estamos
- * ocultando la información que enviamos.
+ * ocultando la informaciÃ³n que enviamos.
  * <P>
- * A partir de este ejercicio, todos los proyectos contendrán el fichero
+ * A partir de este ejercicio, todos los proyectos contendrÃ¡n el fichero
  * web.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamos
- * a usar páginas HTML5, estilos CSS y validaciones JS, a medida que avancemos
- * en los ejercicios, el CSS y JS irá creciendo (Por el momento solo afectan a
+ * a usar pÃ¡ginas HTML5, estilos CSS y validaciones JS, a medida que avancemos
+ * en los ejercicios, el CSS y JS irÃ¡ creciendo (Por el momento solo afectan a
  * los ficheros html).
  * <p>
- * Definimos en fichero web.xml la página de inicio del proyecto, en nuestro
+ * Definimos en fichero web.xml la pÃ¡gina de inicio del proyecto, en nuestro
  * caso index.html
  * <p>
- * Añadimos validación JS sobre el campo texto y la manera de invocar la
- * validación es a travez del id que damos al formulario definido en index.html.
+ * AÃ±adimos validaciÃ³n JS sobre el campo texto y la manera de invocar la
+ * validaciÃ³n es a travez del id que damos al formulario definido en index.html.
  * 
  * @author fips
  *

@@ -10,23 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que muestra informaciÛn capturada de formulario implementado en
+ * Servlet que muestra informaci√≥n capturada de formulario implementado en
  * fichero index.html, el formulario contiene validaciones propias, es decir, en
  * la propia etiqueta INPUT.
  * <p>
  * Los TYPE de INPUT que usamos son: text, number, date, checkbox y radio. Para
  * el ComboBox hemos usado el tag select.
  * <p>
- * Enviar dato a travÈz de formulario de tipo GET y usamos atributo ONSUBMIT. El
- * modo GET muestra los valores que se est·n enviando en la URL, es decir, son
+ * Enviar dato a trav√©z de formulario de tipo GET y usamos atributo ONSUBMIT. El
+ * modo GET muestra los valores que se est√°n enviando en la URL, es decir, son
  * visibles.
  * <p>
- * Usamos funciÛn JS que contiene validaciones sobre los campos del formulario.
+ * Usamos funci√≥n JS que contiene validaciones sobre los campos del formulario.
  * <p>
- * Se aÒade filtro en el campo numÈrico, en concreto, de mÌnimo y m·ximo de
+ * Se a√±ade filtro en el campo num√©rico, en concreto, de m√≠nimo y m√°ximo de
  * edad, definido en la propia etiqueta INPUT.
  * <p>
- * Todas las p·ginas que no tienen CSS ni JS son las que genera y escupe el
+ * Todas las p√°ginas que no tienen CSS ni JS son las que genera y escupe el
  * propio Servlet.
  * 
  * @author fips
@@ -38,7 +38,7 @@ public class LeerParametros extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Captura de los par·metros enviados por par·metro
+		// Captura de los par√°metros enviados por par√°metro
 		String nombre = request.getParameter("nombre");
 		String edad = request.getParameter("edad");
 		String fecha = request.getParameter("fecha");
@@ -62,7 +62,7 @@ public class LeerParametros extends HttpServlet {
 					out.println("<b>" + tema + "</b>");
 				}
 			}
-			out.println("<p>GÈnero: <b>" + genero + "</b></p>");
+			out.println("<p>G√©nero: <b>" + genero + "</b></p>");
 			
 			out.println("<br/><br/>");
 			out.println("<input type='submit' value='Volver' onClick='window.location.href=\"inicio.html\"'/>");

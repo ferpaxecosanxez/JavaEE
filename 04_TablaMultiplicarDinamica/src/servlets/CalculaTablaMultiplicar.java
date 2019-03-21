@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
  * Enviar dato a travez de formulario de tipo POST y usamos atributo ONSUBMIT
  * del formulario definido en index.html.
  * <p>
- * Servlet que muestra las multiplicaciones del 1 al 10 de un número introducido
+ * Servlet que muestra las multiplicaciones del 1 al 10 de un nÃºmero introducido
  * por el usuario en el formulario definido en el fichero index.html.
  * <p>
- * Agregamos botón para volver, es código JS que nos envía a la página de
- * inicio. Se añade validación de dato numérico en formulario mediante JS, al
+ * Agregamos botÃ³n para volver, es cÃ³digo JS que nos envÃ­a a la pÃ¡gina de
+ * inicio. Se aÃ±ade validaciÃ³n de dato numÃ©rico en formulario mediante JS, al
  * igual que en el ejercicio 04 los ficheros CSS y JS solo afectan a los
  * ficheros html.
  * 

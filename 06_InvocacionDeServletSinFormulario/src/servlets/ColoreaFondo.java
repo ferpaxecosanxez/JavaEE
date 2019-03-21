@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet que muestra un mensaje de bienvenida con un color de fondo, dicho
- * color depender· de la opciÛn que el usuario elega desde las opciones de
+ * color depender√° de la opci√≥n que el usuario elega desde las opciones de
  * index.html
  * <p>
  * Primer contacto con llamada a servlet sin formulario, esta llamada es igual
- * que si lo hiciesemos con un formulario de tipo GET, ya que la informaciÛn de
- * la opciÛn elegida viaja en la URL de forma visible, tal que:
+ * que si lo hiciesemos con un formulario de tipo GET, ya que la informaci√≥n de
+ * la opci√≥n elegida viaja en la URL de forma visible, tal que:
  * ...?nombre=valor&nombre=valor&nombre=valor
  * 
  * @author fips
@@ -28,7 +28,7 @@ public class ColoreaFondo extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Leer par·metro.
+		// Leer par√°metro.
 		String color = request.getParameter("color");
 
 		response.setContentType("text/html");

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet simple que genera y escupe código html mostrando el mensaje de "hola
+ * Servlet simple que genera y escupe cÃ³digo html mostrando el mensaje de "hola
  * mundo".
  * <p>
  * Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat
@@ -31,7 +31,7 @@ public class Saludo extends HttpServlet {
 
 		// Obtener el flujo de escritura.
 		try (PrintWriter out = response.getWriter()) {
-			// Escribimos código HTML5.
+			// Escribimos cÃ³digo HTML5.
 			out.println("<!DOCTYPE html>");
 			out.println("<html lang='es'>");
 			out.println("<body>");
