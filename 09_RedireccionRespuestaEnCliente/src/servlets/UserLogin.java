@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que verifica los datos que se envían desde el formulario de
- * index.html, en función de la contraseña escrita nos redirige a una página de
+ * Servlet que verifica los datos que se envÃ­an desde el formulario de
+ * index.html, en funciÃ³n de la contraseÃ±a escrita nos redirige a una pÃ¡gina de
  * error o de acceso.
  * <p>
  * En este caso, vamos a perder los datos cuando invoquemos al servlet de
@@ -31,8 +31,8 @@ public class UserLogin extends HttpServlet {
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 
-		// Si no adjuntamos los datos como parámetros query (?clave=valor), en el
-		// servlet destino, los datos no estarán disponibles.
+		// Si no adjuntamos los datos como parÃ¡metros query (?clave=valor), en el
+		// servlet destino, los datos no estarÃ¡n disponibles.
 		if (pass.compareTo("curso") == 0) {
 			// Transferir a servlet Bienvenido.
 			response.sendRedirect("Bienvenido?user=" + user);
