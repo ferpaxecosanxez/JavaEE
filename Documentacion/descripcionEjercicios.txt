@@ -9,6 +9,7 @@ Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat ya 
 
 Ejercicio 03:
 Servlet que muestra un mensaje de saludo personalizado en función del nombre que escriba el usuario en el formulario, este está definido en el fichero index.html, este debe tener la etiqueta <meta charset="ISO-8859-1"> para los caractéres en español.
+A partir de este ejercicio la codificación de los HTML pasa de <meta charset="UTF-8"> a <meta charset="ISO-8859-1">.
 Enviar dato a travez de formulario de tipo POST. Con el tipo POST estamos ocultando la información que enviamos.
 A partir de este ejercicio, todos los proyectos contendrán el ficheroweb.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamosa usar páginas HTML5, estilos CSS y validaciones JS, a medida que avancemosen los ejercicios, el CSS y JS irá creciendo (Por el momento solo afectan a los ficheros html).
 Definimos en fichero web.xml la página de inicio del proyecto, en nuestro caso index.html
@@ -38,3 +39,5 @@ A partir de este ejercicio, las descripciones definidas en JavaDoc serán exclus
 Traspaso de dato request entre servlets: En el fichero index.html hay un formulario que recoge un dato llamado "nombre" y que pertenece al request, pues bien, este dato se envía al primer servelt (ServletUno) y este no hace nada con el dato "nombre", mas bien agrega un nuevo dato request llamado "dato" y hace la invocación del servlet final (ServletDos).
 La gracia de este ejercicio es que cuando el primer servlet llama al segundo, este es llamado SIN dar RESPUESTA a CLIENTE. Con ello conseguimos mantener el dato "nombre" y no perderlo, por ello cuando llegamos al segundo servlet, este tiene dos datos: "nombre" y "dato".
 Esta acción de recoger y generar nuevos datos lo veremos en más detalle en el ejercicio 10, ya que se trata de atributos de petición, los cuales existen mientras no se de respuesta al cliente.
+
+Ejercicio 08:
