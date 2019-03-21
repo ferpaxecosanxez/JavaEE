@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que verifica los datos que se envían desde el formulario de
- * index.html, en función de la contraseña escrita nos redirige a una página de
+ * Servlet que verifica los datos que se envÃ­an desde el formulario de
+ * index.html, en funciÃ³n de la contraseÃ±a escrita nos redirige a una pÃ¡gina de
  * error o de acceso.
  * 
  * @author fips
@@ -23,9 +23,9 @@ public class UserLogin extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtenemos dato contraseña, si es la definida hace la llamada al servlet
-		// encargado de pintar la página de acceso, de no coincidir llama al servlet
-		// encargado de generar la página de error.
+		// Obtenemos dato contraseÃ±a, si es la definida hace la llamada al servlet
+		// encargado de pintar la pÃ¡gina de acceso, de no coincidir llama al servlet
+		// encargado de generar la pÃ¡gina de error.
 		String pass = request.getParameter("pass");
 
 		RequestDispatcher rd = null;
