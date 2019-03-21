@@ -10,14 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que muestra un mensaje de bienvenida con un color de fondo, dicho
- * color dependerá de la opción que el usuario elega desde las opciones de
- * index.html
+ * Invocación de Servlet que muestra un mensaje de bienvenida con un color de
+ * fondo, dicho color dependerá de la opción que el usuario eliga desde las
+ * opciones de index.html y que lo aplica directamente en el código html que
+ * genera y escupe, es decir, no usa ningún fichero CSS.
  * <p>
- * Primer contacto con llamada a servlet sin formulario, esta llamada es igual
- * que si lo hiciesemos con un formulario de tipo GET, ya que la información de
- * la opción elegida viaja en la URL de forma visible, tal que:
- * ...?nombre=valor&nombre=valor&nombre=valor
+ * En este caso se hace la llamada directa del servlet desde un link o botón,
+ * tenemos que tener en cuenta que el dato que estamos enviando desde index.html
+ * al servlet, lo adjuntamos en la llamada al servlet, por tanto, es como si
+ * usásemos un formulario de tipo GET, ya que el dato viaja en la URL tal que:
+ * <p>
+ * MiServlet?nombre=valor&nombre=valor&nombre=valor
+ * <p>
+ * En este ejercicio solo usamos CSS. Fijamos un tamaño de 100px para el botón
+ * de tamaño medio, así evitamos que su tamaño esté en función de su texto.
  * 
  * @author fips
  *
