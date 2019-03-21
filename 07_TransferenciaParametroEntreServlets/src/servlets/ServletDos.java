@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que es invocado desde otro servlet, por tanto, el objeto
- * <code>request</code> en este caso ya contiene un dato, el cual se ha
- * capturado desde index.html y se lo pasa a este nuevo servlet, pero en la
- * invocación a este segundo servlet, vemos que le adjuntamos un dato desde el
- * primer servlet, dicho dato es aquí donde se recoge.
+ * Servlet final que es invocado desde ServletUno, por tanto, el objeto
+ * <code>request</code> en este caso ya contiene dos datos:
+ * <ul>
+ * <li>"nombre": Capturado desde index.html</li>
+ * <li>"dato": Creado y adjuntado desde ServletUno</li>
+ * </ul>
  * 
  * @author fips
  *
@@ -25,7 +26,7 @@ public class ServletDos extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Recoger parámetro de formulario como el que envía Servlet uno.
+		// Recoger parÃ¡metro de formulario como el que envÃ­a Servlet uno.
 		String nombre = request.getParameter("nombre");
 		String dato = request.getParameter("dato");
 

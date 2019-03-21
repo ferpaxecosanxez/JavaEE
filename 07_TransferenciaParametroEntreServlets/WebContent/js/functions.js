@@ -1,3 +1,11 @@
+/**
+ * Valida si una etiqueta de tipo "input" contiene valor.
+ * 
+ * @param idForm
+ *            Identificador del formulario definido.
+ * @returns true, si todo a ido bien,<br>
+ *          false, en caso contrario.
+ */
 function validaFormulario(idForm) {
 	var form = document.getElementById(idForm);
 	var msg = "";

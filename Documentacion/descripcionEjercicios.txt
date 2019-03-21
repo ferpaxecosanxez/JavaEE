@@ -32,3 +32,9 @@ Invocación de Servlet que muestra un mensaje de bienvenida con un color de fond
 En este caso se hace la llamada directa del servlet desde un link o botón, tenemos que tener en cuenta que el dato que estamos enviando desde index.html al servlet, lo adjuntamos en la llamada al servlet, por tanto, es como si usásemos un formulario de tipo GET, ya que el dato viaja en la URL tal que:
 MiServlet?nombre=valor&nombre=valor&nombre=valor
 En este ejercicio solo usamos CSS. Fijamos un tamaño de 100px para el botón de tamaño medio, así evitamos que su tamaño esté en función de su texto.
+
+Ejercicio 07:
+A partir de este ejercicio, las descripciones definidas en JavaDoc serán exclusivas de cada clase. La información completa del ejercicio estará definida en este fichero.
+Traspaso de dato request entre servlets: En el fichero index.html hay un formulario que recoge un dato llamado "nombre" y que pertenece al request, pues bien, este dato se envía al primer servelt (ServletUno) y este no hace nada con el dato "nombre", mas bien agrega un nuevo dato request llamado "dato" y hace la invocación del servlet final (ServletDos).
+La gracia de este ejercicio es que cuando el primer servlet llama al segundo, este es llamado SIN dar RESPUESTA a CLIENTE. Con ello conseguimos mantener el dato "nombre" y no perderlo, por ello cuando llegamos al segundo servlet, este tiene dos datos: "nombre" y "dato".
+Esta acción de recoger y generar nuevos datos lo veremos en más detalle en el ejercicio 10, ya que se trata de atributos de petición, los cuales existen mientras no se de respuesta al cliente.
