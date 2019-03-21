@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que muestra un mensaje de saludo personalizado en función de que
  * nombre escriba el usuario en el formulario, este está definido en el fichero
- * index.html, este debe tener la etiqueta <meta charset="ISO-8859-1"> para los
- * caractéres en español.
+ * index.html.
+ * <p>
+ * A partir de este ejercicio es cuando empezamos a usar los fichero HTML, la codificación de estos ficheros debe ser UTF-8, de tal manera que:
+ * <p>
+ * &lt;meta charset="UTF-8"&gt;
  * <p>
  * Enviar dato a travez de formulario de tipo POST. Con el tipo POST estamos
  * ocultando la información que enviamos.

@@ -8,8 +8,9 @@ Agregamos indentación en el código html que escupe, esta acción se realiza pa
 Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat ya que el proyecto web no contiene el fichero web.xml.
 
 Ejercicio 03:
-Servlet que muestra un mensaje de saludo personalizado en función del nombre que escriba el usuario en el formulario, este está definido en el fichero index.html, este debe tener la etiqueta <meta charset="ISO-8859-1"> para los caractéres en español.
-A partir de este ejercicio la codificación de los HTML pasa de <meta charset="UTF-8"> a <meta charset="ISO-8859-1">.
+Servlet que muestra un mensaje de saludo personalizado en función del nombre que escriba el usuario en el formulario, este está definido en el fichero index.html.
+A partir de este ejercicio es cuando empezamos a usar los fichero HTML, la codificación de estos ficheros debe ser UTF-8, de tal manera que:
+<meta charset="UTF-8">
 Enviar dato a travez de formulario de tipo POST. Con el tipo POST estamos ocultando la información que enviamos.
 A partir de este ejercicio, todos los proyectos contendrán el ficheroweb.xml, es decir, que podemos ejecutar desde el propio proyecto y empezamosa usar páginas HTML5, estilos CSS y validaciones JS, a medida que avancemosen los ejercicios, el CSS y JS irá creciendo (Por el momento solo afectan a los ficheros html).
 Definimos en fichero web.xml la página de inicio del proyecto, en nuestro caso index.html
