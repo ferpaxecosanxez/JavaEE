@@ -53,5 +53,11 @@ Consta de tres Servlets, donde el principal invoca a uno u otro en función de s
 Para ello, al igual que el ejercicio 07, usa el método: FORWARD.
 Actualizamos variable de control en JS, deja de ser un número entero para ser una bandera de tipo boolean y añadimos valicación de campo de TYPE "password". En JS no hay tipado, pero al darle el valor a la variable, esta pasa a ser de un tipo u otro.
 
+Ejercicio 9:
+Login simple con RESPUESTA a CLIENTE.
+Para dar respuesta al cliente de forma directa, usaremos el objeto response, el cual contiene el método "sendRedirect", es decir: "response.sendRedirect("Bienvenido?user=" + user);".
+En las llamadas a otros servlets, si no se adjuntan los datos, estos nunca llegarán, ya que al enviar la respuesta a cliente, los datos existentes en el objeto request desaparecen.
+Usa JS para las validaciones de formulario.
+
 
 >> A partir del 12 veo que no agregamos out.println("<meta charset='UTF-8'>"); puede ser porque ya no generamos html desde los servlet.
