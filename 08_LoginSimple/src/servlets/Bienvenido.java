@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servet que se ejecuta cuando el usuario a escrito la contraseÒa correcta.
- * Pinta la p·gina de acceso que es la de bienvenida.
+ * Servet que se ejecuta cuando el usuario a escrito la contrase√±a correcta.
+ * Pinta la p√°gina de acceso que es la de bienvenida.
  * 
  * @author fips
  *
@@ -22,7 +22,7 @@ public class Bienvenido extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// La contraseÒa es correcta, entra aquÌ.
+		// La contrase√±a es correcta, entra aqu√≠.
 		String user = request.getParameter("user");
 
 		response.setContentType("text/html");

@@ -8,6 +8,7 @@ Agregamos indentación en el código html que escupe, esta acción se realiza pa
 Para ver el resultado debemos ejecutar el servlet de forma directa en Tomcat ya que el proyecto web no contiene el fichero web.xml.
 
 Ejercicio 03:
+Enviar dato a travez de formulario de tipo POST.
 Servlet que muestra un mensaje de saludo personalizado en función del nombre que escriba el usuario en el formulario, este está definido en el fichero index.html.
 A partir de este ejercicio es cuando empezamos a usar los fichero HTML, la codificación de estos ficheros debe ser UTF-8, de tal manera que:
 <meta charset="UTF-8">
@@ -22,23 +23,35 @@ Servlet que muestra las multiplicaciones del 1 al 10 de un número introducido p
 Agregamos botón para volver, es código JS que nos envía a la página de inicio. Se añade validación de dato numérico en formulario mediante JS, al igual que en el ejercicio 04 los ficheros CSS y JS solo afectan a los ficheros html.
 
 Ejercicio 05:
+Enviar dato a travéz de formulario de tipo GET y usamos atributo ONSUBMIT.
 Servlet que muestra información capturada de formulario implementado enfichero index.html, el formulario contiene validaciones propias, es decir, en la propia etiqueta INPUT.
-Los TYPE de INPUT que usamos son: text, number, date, checkbox y radio. Para el ComboBox hemos usado el tag select.
+Los TYPE de INPUT que usamos son: "text", "number", "date", "checkbox" y "radio". Para el ComboBox hemos usado el tag "select".
 Enviar dato a travéz de formulario de tipo GET y usamos atributo ONSUBMIT. El modo GET muestra los valores que se están enviando en la URL, es decir, son visibles.
 Usamos función JS que contiene validaciones sobre los campos del formulario.
 Se añade filtro en el campo numérico, en concreto, de mínimo y máximo de edad, definido en la propia etiqueta INPUT.
 Todas las páginas que no tienen CSS ni JS son las que genera y escupe el propio Servlet.
 
 Ejercicio 06:
+Invocación de Servlet sin usar formulario.
 Invocación de Servlet que muestra un mensaje de bienvenida con un color de fondo, dicho color dependerá de la opción que el usuario eliga desde las opciones de index.html y que lo aplica directamente en el código html que genera y escupe, es decir, no usa ningún fichero CSS.
 En este caso se hace la llamada directa del servlet desde un link o botón, tenemos que tener en cuenta que el dato que estamos enviando desde index.html al servlet, lo adjuntamos en la llamada al servlet, por tanto, es como si usásemos un formulario de tipo GET, ya que el dato viaja en la URL tal que:
 MiServlet?nombre=valor&nombre=valor&nombre=valor
+A partir de este ejercicio, empezamos a añadir codificación a las páginas generadas en los Servlet, es decir, agregamos la línea: out.println("<meta charset='UTF-8'>");
 En este ejercicio solo usamos CSS. Fijamos un tamaño de 100px para el botón de tamaño medio, así evitamos que su tamaño esté en función de su texto.
 
 Ejercicio 07:
+Servlets SIN dar RESPUESTA a CLIENTE.
 A partir de este ejercicio, las descripciones definidas en JavaDoc serán exclusivas de cada clase. La información completa del ejercicio estará definida en este fichero.
 Traspaso de dato request entre servlets: En el fichero index.html hay un formulario que recoge un dato llamado "nombre" y que pertenece al request, pues bien, este dato se envía al primer servelt (ServletUno) y este no hace nada con el dato "nombre", mas bien agrega un nuevo dato request llamado "dato" y hace la invocación del servlet final (ServletDos).
 La gracia de este ejercicio es que cuando el primer servlet llama al segundo, este es llamado SIN dar RESPUESTA a CLIENTE. Con ello conseguimos mantener el dato "nombre" y no perderlo, por ello cuando llegamos al segundo servlet, este tiene dos datos: "nombre" y "dato".
+Para invocar a un Servlet sin dar respuesta al cliente, tenemos que usar: "request.getRequestDispatcher("Servlet").forward(request, response);"
 Esta acción de recoger y generar nuevos datos lo veremos en más detalle en el ejercicio 10, ya que se trata de atributos de petición, los cuales existen mientras no se de respuesta al cliente.
 
 Ejercicio 08:
+Login simple SIN dar RESPUESTA a CLIENTE.
+Consta de tres Servlets, donde el principal invoca a uno u otro en función de si la contraseña está correcta o no. El servlet destino puede leer datos que ha recogido el servlet principal desde el formularo porque el servlet principal no da respuesta al cliente, simplemente invoca a otro servlet por lo cual, no se pierde la información.
+Para ello, al igual que el ejercicio 07, usa el método: FORWARD.
+Actualizamos variable de control en JS, deja de ser un número entero para ser una bandera de tipo boolean y añadimos valicación de campo de TYPE "password". En JS no hay tipado, pero al darle el valor a la variable, esta pasa a ser de un tipo u otro.
+
+
+>> A partir del 12 veo que no agregamos out.println("<meta charset='UTF-8'>"); puede ser porque ya no generamos html desde los servlet.
