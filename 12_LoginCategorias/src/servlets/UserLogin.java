@@ -14,9 +14,9 @@ import beans.Usuario;
 
 /**
  * Servlet que lee los datos enviados desde index.html y usa uno de ellos para
- * generar un bean de tipo Usuario para luego guardarlo como Atributo de sesiÛn.
+ * generar un bean de tipo Usuario para luego guardarlo como Atributo de sesi√≥n.
  * <p>
- * El atributo de sesiÛn se genera, si solo si, el login es correcto.
+ * El atributo de sesi√≥n se genera, si solo si, el login es correcto.
  * 
  * @author fips
  *
@@ -33,10 +33,14 @@ public class UserLogin extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		if (pass.compareTo("curso") == 0) {
-			// Creamos un usuario por defecto y lo guardamos como atributo de peticiÛn, este
-			// atributo seguir· existiendo mientras no se de respuesta al cliente.
-			Usuario unUser = new Usuario(user, "email@pordefecto.com", 123456789);
-			// MÈtodo para almacenar un atributo de sesion.
+			// Creamos un usuario por defecto y lo guardamos como atributo de petici√≥n, este
+			 // atributo seguir√° existiendo mientras no se de respuesta al cliente.
+			Usuario unUser = new Usuario();
+			unUser.setEmail("correo@fips.com");
+			unUser.setNombre(user);
+			unUser.setTelefono(601524963);
+			
+			// M√©todo para almacenar un atributo de sesion.
 			HttpSession session = request.getSession();
 			session.setAttribute("userDefault", unUser);
 
@@ -44,7 +48,7 @@ public class UserLogin extends HttpServlet {
 			response.sendRedirect("temas.html");
 		} else {
 			// Transferir a servlet Error sin enviar respuesta a cliente, por lo que no
-			// perdemos los datos y podemos obtner pass desde el servlet destino.
+			// perdemos los datos y podemos obtener "pass" desde el servlet destino.
 			rd = request.getRequestDispatcher("Error");
 			// Ejecutar transferencia.
 			rd.forward(request, response);

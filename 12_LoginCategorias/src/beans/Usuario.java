@@ -3,7 +3,7 @@ package beans;
 import java.io.Serializable;
 
 /**
- * Bean simple que contiene informaciÛn b·sica de un usuario.
+ * Bean simple que contiene informaci√≥n b√°sica de un usuario.
  * 
  * @author fips
  *
@@ -14,14 +14,6 @@ public class Usuario implements Serializable {
 	private String nombre;
 	private String email;
 	private int telefono;
-
-	// Constructores.
-	public Usuario(String nombre, String email, int telefono) {
-		super();
-		this.nombre = nombre;
-		this.email = email;
-		this.telefono = telefono;
-	}
 
 	// Getter y Setters.
 	public String getNombre() {

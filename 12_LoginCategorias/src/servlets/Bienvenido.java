@@ -8,12 +8,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.Usuario;
 
 /**
- * Servet que se ejecuta cuando el usuario a escrito la contrase馻 correcta. Lee
- * el objeto de petici髇 para mostrar sus datos.
+ * Servet que se ejecuta cuando el usuario a escrito la contrase帽a correcta. Lee
+ * el objeto de sesi贸n para mostrar sus datos.
+ * <p>
+ * Para leer un atributo de sesi贸n, tenemos que obtener la sesi贸n actual y luego
+ * obtener los atributos, por ello le pasamos el par谩metro "false".
  * 
  * @author fips
  *
@@ -24,8 +28,9 @@ public class Bienvenido extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtenemos el atributo de petici髇.
-		Usuario unUser = (Usuario) request.getAttribute("userDefault");
+		// Obtener la sesi贸n existente, por ello le pasamos "false" al constructor.
+		HttpSession session = request.getSession(false);
+		Usuario unUser = (Usuario) session.getAttribute("userDefault");
 
 		response.setContentType("text/html");
 		try (PrintWriter out = response.getWriter()) {
@@ -40,7 +45,7 @@ public class Bienvenido extends HttpServlet {
 			out.println("<body>");
 			out.println("<h1>Bienvenido " + unUser.getNombre() + "</h1>");
 			out.println("<p>Su correo por defecto es: " + unUser.getEmail() + "</p>");
-			out.println("<p>Su tel閒ono por defecto es: " + unUser.getTelefono() + "</p>");
+			out.println("<p>Su tel茅fono por defecto es: " + unUser.getTelefono() + "</p>");
 			out.println("<br/><br/>");
 			out.println("<input type='submit' value='Volver' onClick='window.location.href=\"index.html\"'/>");
 			out.println("</body>");

@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import beans.Usuario;
 
 /**
- * Servlet que muestra informaciÛn del usuario logado y muestra el tema elegido
- * desde la p·gina temas.html, la cual invoca a este servlet.
+ * Servlet que muestra informaci√≥n del usuario logado y muestra el tema elegido
+ * desde la p√°gina temas.html, la cual invoca a este servlet.
  * 
  * @author fips
  *
@@ -45,7 +45,7 @@ public class TemaElegido extends HttpServlet {
 			out.println("<h1>Tema seleccionado</h1>");
 			out.println("<p>Su nombre es: " + unUser.getNombre() + "</p>");
 			out.println("<p>Su correo por defecto es: " + unUser.getEmail() + "</p>");
-			out.println("<p>Su telÈfono por defecto es: " + unUser.getTelefono() + "</p>");
+			out.println("<p>Su tel√©fono por defecto es: " + unUser.getTelefono() + "</p>");
 			out.println("<p>Tema seleccionado es: <b>" + tema + "</b></p>");
 			out.println("<br/><br/>");
 			out.println("<input type='submit' value='Cerrar Sesion' onClick='window.location.href=\"CierraSesion\"'/>");
