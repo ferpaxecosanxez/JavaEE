@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet que se ejecuta cuando el usuario ha puesto mal la
- * contraseÒa. Pinta la p·gina de error.
+ * contrase√±a. Pinta la p√°gina de error.
  * 
  * @author fips
  *
@@ -22,7 +22,7 @@ public class Error extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// La contraseÒa es incorrecta, entra aquÌ.
+		// La contrase√±a es incorrecta, entra aqu√≠.
 		String pass = request.getParameter("pass");
 
 		response.setContentType("text/html");
@@ -36,8 +36,8 @@ public class Error extends HttpServlet {
 			out.println("</head>");
 			out.println("");
 			out.println("<body>");
-			out.println("<h1>Error en contraseÒa</h1>");
-			out.println("<p>La contraseÒa: <b>" + pass + "</b> es icorrecta</p>");
+			out.println("<h1>Error en contrase√±a</h1>");
+			out.println("<p>La contrase√±a: <b>" + pass + "</b> es icorrecta</p>");
 			out.println("<br/><br/>");
 			out.println("<input type='submit' value='Volver' onClick='window.location.href=\"index.html\"'/>");
 			out.println("</body>");

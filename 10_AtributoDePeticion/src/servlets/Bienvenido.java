@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import beans.Usuario;
 
 /**
- * Servet que se ejecuta cuando el usuario a escrito la contraseña correcta. Lee
- * el objeto de petición para mostrar sus datos.
+ * Servet que se ejecuta cuando el usuario a escrito la contraseÃ±a correcta. Lee
+ * el objeto de peticiÃ³n para mostrar sus datos.
  * 
  * @author fips
  *
@@ -24,7 +24,7 @@ public class Bienvenido extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtenemos el atributo de petición.
+		// Obtenemos el atributo de peticiÃ³n.
 		Usuario unUser = (Usuario) request.getAttribute("userDefault");
 
 		response.setContentType("text/html");
@@ -40,7 +40,7 @@ public class Bienvenido extends HttpServlet {
 			out.println("<body>");
 			out.println("<h1>Bienvenido " + unUser.getNombre() + "</h1>");
 			out.println("<p>Su correo por defecto es: " + unUser.getEmail() + "</p>");
-			out.println("<p>Su teléfono por defecto es: " + unUser.getTelefono() + "</p>");
+			out.println("<p>Su telÃ©fono por defecto es: " + unUser.getTelefono() + "</p>");
 			out.println("<br/><br/>");
 			out.println("<input type='submit' value='Volver' onClick='window.location.href=\"index.html\"'/>");
 			out.println("</body>");

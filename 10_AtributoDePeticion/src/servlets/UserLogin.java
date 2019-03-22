@@ -14,7 +14,7 @@ import beans.Usuario;
 /**
  * Servlet que lee los datos enviados desde index.html y usa uno de ellos para
  * generar un bean de tipo Usuario para luego guardarlo como Atributo de
- * peticiÛn.
+ * petici√≥n.
  * 
  * @author fpachecs
  *
@@ -31,10 +31,14 @@ public class UserLogin extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		if (pass.compareTo("curso") == 0) {
-			 // Creamos un usuario por defecto y lo guardamos como atributo de peticiÛn, este
-			 // atributo seguir· existiendo mientras no se de respuesta al cliente.
-			Usuario unUser = new Usuario(user, "email@pordefecto.com", 123456789);
-			// MÈtodo para almacenar un atributo de peticiÛn.
+			 // Creamos un usuario por defecto y lo guardamos como atributo de petici√≥n, este
+			 // atributo seguir√° existiendo mientras no se de respuesta al cliente.
+			Usuario unUser = new Usuario();
+			unUser.setEmail("correo@fips.com");
+			unUser.setNombre(user);
+			unUser.setTelefono(601524963);
+			
+			// M√©todo para almacenar un atributo de petici√≥n.
 			request.setAttribute("userDefault", unUser);
 
 			// Transferir a servlet Bienvenido.
