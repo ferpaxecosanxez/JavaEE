@@ -65,5 +65,12 @@ Almacena los datos obtenidos del request en un Bean y este lo trata como un úni
 Toda la información que se guarde en el Bean request existirá mientras no se envíe respuesta al cliente, en cuanto demos respuesta al cliente, toda la información desaparecerá.
 Por tanto, cuando invocamos a otro Servlet, lo tendremos que hacer con FORWARD.
 
+Ejercicio 11:
+Contador - Atributo de Sesión.
+El atributo de sesión existe mientras la sesión esté abierta (Podemos definir el tiempo que dura una sesión), por tanto, el enviar respuesta al cliente no le afecta.
+En este caso se envía la respuesta al cliente "SEND_REDIRECT" para que se haga efectivo el contéo de pulsaciones del botón.
+Para DEFINIR el "TIEMPO de SESIÓN", agregamos el time-out en nuestro fichero de apliación "web.xml".
+Se definen 3 clases CSS de botones: 1:.boton, su tamaño se adapta al texto que cotiene, 2: .botonMedio, tiene un tamaño fijo de 100px y 3: .botonLargo, tiene un tamaño fijo de 140px.
+No contiene fichero JS ya que no existe formulario a validar.
 
 >> A partir del 12 veo que no agregamos out.println("<meta charset='UTF-8'>"); puede ser porque ya no generamos html desde los servlet.

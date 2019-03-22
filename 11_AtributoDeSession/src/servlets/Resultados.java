@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet que muestra el número de veces que se ha dado al botón "Entrar" que
- * está en el fichero index.html
+ * Servlet que muestra el nÃºmero de veces que se ha dado al botÃ³n "Entrar" que
+ * estÃ¡ en el fichero index.html
  * <p>
  * Tenemos dos casos:
  * <ul>
- * <li>No enviar respuesta a cliente: El número de veces puede llegar a ser
+ * <li>No enviar respuesta a cliente: El nÃºmero de veces puede llegar a ser
  * siempre 1, ya que los navegadores no recargan contenido, para que lo recarge
  * debemos desactivar algunas opciones.</li>
  * <li>Enviar respuesta a cliente: Siempre recarga contenido, por tanto si se
@@ -32,16 +32,16 @@ public class Resultados extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtener sesión actual.
+		// Obtener sesiÃ³n actual.
 		HttpSession session = request.getSession();
 		int valor;
 
 		if (session.getAttribute("contador") != null) {
-			// Existe atributo de sessión.
+			// Existe atributo de sessiÃ³n.
 			valor = (Integer) session.getAttribute("contador");
 		} else {
-			// No existe atributo de sessión, por tanto no ha entrado al servlet de Entrar.
-			// Por tanto su valor será 0.
+			// No existe atributo de sessiÃ³n, por tanto no ha entrado al servlet de Entrar.
+			// Por tanto su valor serÃ¡ 0.
 			valor = 0;
 		}
 

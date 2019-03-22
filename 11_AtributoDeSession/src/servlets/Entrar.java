@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet que simula una entrada, por cada vez que se de al botÛn, se sumar·
- * una entrada. Como ejemplo, podrÌamos decir que es un contador de elementos.
+ * Servlet que simula una entrada, por cada vez que se de al bot√≥n, se sumar√°
+ * una entrada. Como ejemplo, podr√≠amos decir que es un contador de elementos.
  * <p>
- * Para probar que es un atributo de sesiÛn, enviaremos la respuesta al cliente,
- * en este caso, los datos almacenados como atributos de sesiÛn existir·n
- * mietras la sesiÛn estÈ abierta, por tanto, el enviar respuesta al cliente no
+ * Para probar que es un atributo de sesi√≥n, enviaremos la respuesta al cliente,
+ * en este caso, los datos almacenados como atributos de sesi√≥n existir√°n
+ * mietras la sesi√≥n est√° abierta, por tanto, el enviar respuesta al cliente no
  * le afecta.
  * 
  * @author fips
@@ -27,30 +27,30 @@ public class Entrar extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Los atributos de sesion son accesibles por cualquiera, se envÌe o no
-		// respuesta al cliente, pero tiene un tiempo de vida, el se sessiÛn.
+		// Los atributos de sesion son accesibles por cualquiera, se env√≠e o no
+		// respuesta al cliente, pero tiene un tiempo de vida, el se sessi√≥n.
 		HttpSession session = request.getSession();
 
 		// Cuando lo llamamos, hay que saber si es la primera vez que lo llamamos o no,
-		// para hacer una acciÛn u otra.
+		// para hacer una acci√≥n u otra.
 		int valor;
 		if (session.getAttribute("contador") != null) {
-			// El atributo de sesiÛn existe.
+			// El atributo de sesi√≥n existe.
 			valor = (Integer) session.getAttribute("contador");
 			valor++;
 			session.setAttribute("contador", valor);
 		} else {
-			// El atributo de sesiÛn no existe a˙n, por tanto no tiene valor asignado, le
+			// El atributo de sesi√≥n no existe a√∫n, por tanto no tiene valor asignado, le
 			// damos el valor de 1, ya que si este servlet se ejecuta, significa que ha
 			// entrado una vez.
 			valor = 1;
 			session.setAttribute("contador", valor);
 		}
-		// EnvÌa respuesta a cliente, por tanto el conteo es instant·neo, no es
+		// Env√≠a respuesta a cliente, por tanto el conteo es instant√°neo, no es
 		// necesario configurar el explorador.
 		response.sendRedirect("index.html");
 
-		// Transferimos la peticiÛn a la p·gina inicio.html sin enviar respuesta a
+		// Transferimos la petici√≥n a la p√°gina inicio.html sin enviar respuesta a
 		// cliente. Actualiza contador si de desactivan opciones del navegador.
 		// request.getRequestDispatcher("index.html").forward(request, response);
 	}
