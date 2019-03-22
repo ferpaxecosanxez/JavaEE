@@ -83,5 +83,14 @@ Si el login es correcto se genera un atributo de sesión que contiene un bean y 
 Se añade la opción de CERRAR SESION para el servlet final.
 Usa JS para las validaciones de formulario.
 
+---------------------------------------------------------------------
+-- Usamos ficheros JSP con HTML5
+---------------------------------------------------------------------
 
->> A partir del 12 veo que no agregamos out.println("<meta charset='UTF-8'>"); puede ser porque ya no generamos html desde los servlet.
+Ejercicio 13:
+Multiplicaciones en tabla con estilo CSS.
+A partir de este ejercicio ya no generamos HTML desde los Servlet.
+Es el primer contacto con ficheros JSP + HTML5, por ello la primera línea de la JSP es: <%@page language="java" pageEncoding="UTF-8"%>, importante el tema de codificación, seguimos manteniendo UTF-8.
+La funcionalidad es la misma que la del ejercicio 02, pero no usamos servlets ya que implementamos la lógica en el fichero JSP con código Java embebido.
+Continuamos con proyectos web que usan el fichero "web.xml" para definir la página de inicio, por tanto, podemos seguir ejecutando desde aplicación.
+Se añade estilo CSS para tablas y se fija el ancho de la clase ".main" a un 80%.
