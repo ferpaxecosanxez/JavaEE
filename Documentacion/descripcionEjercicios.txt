@@ -94,3 +94,6 @@ Es el primer contacto con ficheros JSP + HTML5, por ello la primera línea de la
 La funcionalidad es la misma que la del ejercicio 02, pero no usamos servlets ya que implementamos la lógica en el fichero JSP con código Java embebido.
 Continuamos con proyectos web que usan el fichero "web.xml" para definir la página de inicio, por tanto, podemos seguir ejecutando desde aplicación.
 Se añade estilo CSS para tablas y se fija el ancho de la clase ".main" a un 80%.
+
+Ejercicio 14:
+
