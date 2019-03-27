@@ -1,4 +1,5 @@
 <%@page language="java" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang='es'>
 
@@ -21,6 +22,6 @@
 		<p>Debe ser un número entero</p>
 	</div>
 	
-	<%@ include file="footer.html" %>
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

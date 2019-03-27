@@ -88,15 +88,26 @@ Usa JS para las validaciones de formulario.
 ---------------------------------------------------------------------
 
 Ejercicio 13:
-Multiplicaciones en tabla con estilo CSS.
+Copia del ejecicio dos. Multiplicaciones en tabla con estilo CSS.
 A partir de este ejercicio ya no generamos HTML desde los Servlet.
-Es el primer contacto con ficheros JSP + HTML5, por ello la primera línea de la JSP es: <%@page language="java" pageEncoding="UTF-8"%>, importante el tema de codificación, seguimos manteniendo UTF-8.
+Es el primer contacto con ficheros JSP + HTML5, por ello la primera línea de la JSP es: <%@ page language="java" pageEncoding="UTF-8"%>, importante el tema de codificación, seguimos manteniendo UTF-8.
 La funcionalidad es la misma que la del ejercicio 02, pero no usamos servlets ya que implementamos la lógica en el fichero JSP con código Java embebido.
 Continuamos con proyectos web que usan el fichero "web.xml" para definir la página de inicio, por tanto, podemos seguir ejecutando desde aplicación.
 Se añade estilo CSS para tablas y se fija el ancho de la clase ".main" a un 80%.
 
 Ejercicio 14:
-Copia del ejercicio doce.
+Copia del ejercicio doce. <%=request.getParameter("tema")%> y <%=session.getAttribute("usuario")%>
 La primera diferencia que observamos, es que ya no usamos Bean para almacenarlo como atributo de petición. Esto lo hacemos para no complicar mucho la definición de las JSP destino.
-Los servlets encargados de montrar las páginas de respuestas son sustituidos por páginas JSP (Bienvenido.java > bienvenido.jsp || Error.java > error.jsp), donde se usa HTML5, por tanto, podemos aplicar estilos CSS y validaciones JS.
+Los servlets encargados de montrar las páginas de respuestas son sustituidos por páginas JSP (TemaElegido.java > bienvenido.jsp || Error.java > error.jsp), donde se usa HTML5, por tanto, podemos aplicar estilos CSS y validaciones JS.
 Desde JSP se leen los atributos de sesión (session) y de petición (request) de forma directa.
+
+---------------------------------------------------------------------
+-- Validación de formulario por THIS
+---------------------------------------------------------------------
+
+Ejercicio 15:
+Copia del ejecicio cuatro. Funcionalidad <%@ include file="fichero.jsp"%> de JSP
+Este ejercicio muestra como agregar código HTML5 a una página JSP. La plantilla que hace referencia al pie de la página es un fichero JSP para poder definir el encoding UTF-8, ya que si lo hacíamos en un fichero HTML5, teníamos que definir una estructura completa de HTML5.
+La diferencia es que se sustituyen los servlet que generan páginas HTML por ficheros JSP con HTML5.
+Se añade validación JS sobre el campo del fichero "index.html", el cual está definido en un formulario. Pasamos de forma directa el objeto formulario como parámetro (THIS) a la función JS, lo cual nos ahorra el atributo id. El TYPE del campo es "text" para que pueda saltar el error si no introducimos un número entero.
+Agregamos un array de resultados como atributo de petición (request) y re-direccionamos a página JSP que lea y muestre dichos resultados.
