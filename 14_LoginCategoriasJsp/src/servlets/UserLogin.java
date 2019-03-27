@@ -12,9 +12,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Servlet que lee los datos enviados desde index.html y usa el nombre de
- * usuario para guardarlo como Atributo de sesión.
+ * usuario para guardarlo como Atributo de sesiÃ³n.
  * <p>
- * El atributo de sesión se genera, si solo si, el login es correcto.
+ * El atributo de sesiÃ³n se genera, si solo si, el login es correcto.
  * 
  * @author fips
  *
@@ -31,15 +31,15 @@ public class UserLogin extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		if (pass.compareTo("curso") == 0) {
-			// Login correcto, guardamos nombre de usuario como atributo de sesión
+			// Login correcto, guardamos nombre de usuario como atributo de sesiÃ³n
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", user);
 
 			// Enviar respuesta a cliente y transferir a temas.
 			response.sendRedirect("temas.html");
 		} else {
-			// Transferir a servlet Error sin enviar respuesta a cliente, por lo que no
-			// perdemos los datos y podemos obtener pass desde el servlet destino.
+			// Transferir a JSP de error sin enviar respuesta a cliente, por lo que no
+			// perdemos los datos y podemos obtener el datos "pass".
 			rd = request.getRequestDispatcher("error.jsp");
 			// Ejecutar transferencia.
 			rd.forward(request, response);

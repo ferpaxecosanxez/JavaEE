@@ -60,7 +60,7 @@ En las llamadas a otros servlets, si no se adjuntan los datos, estos nunca llega
 Usa JS para las validaciones de formulario.
 
 >> La diferencia en dar o no respuesta al cliente reside en:
->> 1º Si no damos respuesta a cliente, no perdemos los datos de la petición y es más rápida la navegación. No se actualiz página.
+>> 1º Si no damos respuesta a cliente, no perdemos los datos de la petición y es más rápida la navegación. No se actualiza página.
 >> 2º Si la damos, perdemos los datos de la petición y es más lenta la navegación. Tiene actualización automática de página.
 
 Ejercicio 10:
@@ -96,4 +96,7 @@ Continuamos con proyectos web que usan el fichero "web.xml" para definir la pág
 Se añade estilo CSS para tablas y se fija el ancho de la clase ".main" a un 80%.
 
 Ejercicio 14:
-
+Copia del ejercicio doce.
+La primera diferencia que observamos, es que ya no usamos Bean para almacenarlo como atributo de petición. Esto lo hacemos para no complicar mucho la definición de las JSP destino.
+Los servlets encargados de montrar las páginas de respuestas son sustituidos por páginas JSP (Bienvenido.java > bienvenido.jsp || Error.java > error.jsp), donde se usa HTML5, por tanto, podemos aplicar estilos CSS y validaciones JS.
+Desde JSP se leen los atributos de sesión (session) y de petición (request) de forma directa.
