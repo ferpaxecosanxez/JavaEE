@@ -16,7 +16,7 @@
 	List<Producto> carrito = (List<Producto>) session.getAttribute("carrito");
 	if(carrito == null || carrito.size() == 0){
 	%>
-	<!-- Re dirección sin enviar respuesta a cliente -->		
+	<!-- Re direcciÃ³n sin enviar respuesta a cliente -->		
 	<jsp:forward page="carritoVacio.html"/>
 	<%
 	}else{
@@ -29,10 +29,10 @@
 	<div class="main">
 		<table class="tabla">
 			<tr class="tablaFila">
-				<th class="tablaTitulo">Opción</th>
+				<th class="tablaTitulo">OpciÃ³n</th>
 				<th class="tablaTitulo">Nombre</th>
 				<th class="tablaTitulo">Precio</th>
-				<th class="tablaTitulo">Categoría</th>
+				<th class="tablaTitulo">CategorÃ­a</th>
 			</tr>
 			<%
 			for(int i = 0; i < carrito.size(); i++){

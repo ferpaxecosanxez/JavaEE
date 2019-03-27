@@ -9,21 +9,21 @@
 
 <body>
 	<header>
-		<h1>Agregar un nuevo producto:</h1>
+		<h1>Agregar Producto:</h1>
 	</header>
 	
 	<div class="main">
 		<form action="Agregar" method="post"
 			onsubmit="return validaFormulario(this)">
-			<span>Nombre:</span>
+			<span class="datoSpan">Nombre:</span>
 			<input class="dato" type="text" name="nombre"/>
 			
 			<br/><br/>
-			<span>Precio:</span>
+			<span class="datoSpan">Precio:</span>
 			<input class="dato" type="number" step="0.01" name="precio"/>
 			
 			<br/><br/>
-			<span>Categoría:</span>
+			<span class="datoSpan">Categoría:</span>
 			<input class="dato" type="text" name="categoria"/>
 			
 			<div class="formFooter">

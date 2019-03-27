@@ -17,7 +17,7 @@ import beans.Producto;
 /**
  * Servlet que recoge los datos del formulario de index.html para generar un
  * objeto de tipo Producto, generado el objeto, este se almacena en el carrito,
- * es decir, que se a馻de un elemento a la lista almacenada a nivel de sesi髇.
+ * es decir, que se a帽ade un elemento a la lista almacenada a nivel de sesi贸n.
  * 
  * @author fips
  *
@@ -29,23 +29,23 @@ public class Agregar extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtener par醡etros y crear objeto.
+		// Obtener par谩metros y crear objeto.
 		String nombre = request.getParameter("nombre");
 		BigDecimal precio = new BigDecimal(request.getParameter("precio"));
 		String categoria = request.getParameter("categoria");
 
 		Producto producto = new Producto(nombre, precio, categoria);
 
-		// Obtener la sesi髇 de usuario.
+		// Obtener la sesi贸n de usuario.
 		HttpSession session = request.getSession();
 
 		List<Producto> carrito;
 		if (session.getAttribute("carrito") != null) {
-			// El atributo de sesi髇 (el carrito) existe.
+			// El atributo de sesi贸n (el carrito) existe.
 			carrito = (List<Producto>) session.getAttribute("carrito");
 			carrito.add(producto);
 		} else {
-			// El atributo de sesi髇 (el carrito) no existe a鷑, por tanto lo creamos, ya
+			// El atributo de sesi贸n (el carrito) no existe a煤n, por tanto lo creamos, ya
 			// que si se ha invocado a este servlet, significa que ha creado un producto y
 			// quiere guardarlo en el carrito.
 			carrito = new ArrayList<>();
@@ -53,7 +53,8 @@ public class Agregar extends HttpServlet {
 			session.setAttribute("carrito", carrito);
 		}
 
-		// Volvemos a la p醙ina de inicio sin enviar respuesta a cliente.
+		// Volvemos a la p谩gina de inicio sin enviar respuesta a cliente ya que no
+		// mostramos el estado de carrito.
 		request.getRequestDispatcher("index.html").forward(request, response);
 	}
 

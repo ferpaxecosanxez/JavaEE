@@ -2,6 +2,12 @@ package beans;
 
 import java.math.BigDecimal;
 
+/**
+ * Bean que representa un producto de carrito.
+ * 
+ * @author fips
+ *
+ */
 public class Producto {
 	private String nombre;
 	private BigDecimal precio;

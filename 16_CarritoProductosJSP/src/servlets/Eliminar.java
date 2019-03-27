@@ -13,7 +13,11 @@ import javax.servlet.http.HttpSession;
 import beans.Producto;
 
 /**
- * Servlet implementation class Eliminar
+ * Servlet que elimina un objeto Producto de la lista almacenada en sesión que
+ * representa un carrito de compra.
+ * 
+ * @author fips
+ *
  */
 @SuppressWarnings("serial")
 @WebServlet("/Eliminar")
@@ -23,7 +27,7 @@ public class Eliminar extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 
-		// Otenemos el carrito que est� almacenado en la sesi�n.
+		// Otenemos el carrito que está almacenado en la sesión.
 		@SuppressWarnings("unchecked")
 		List<Producto> carrito = (List<Producto>) session.getAttribute("carrito");
 
@@ -31,7 +35,8 @@ public class Eliminar extends HttpServlet {
 		int indice = Integer.parseInt(request.getParameter("indice"));
 		carrito.remove(indice);
 
-		// Regargamos la p�gina del carrito.
-		request.getRequestDispatcher("verCarrito.jsp").forward(request, response);
+		// Regargamos la página del carrito actualizada, para ello enviaremos respuesta
+		// al cliente (Es más lento, pero nos actualiza la página de forma automática).
+		response.sendRedirect("verCarrito.jsp");
 	}
 }
