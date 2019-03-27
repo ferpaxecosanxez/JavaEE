@@ -1,4 +1,4 @@
-body{
+body {
 	text-align: center;
 	margin: auto;
 	width: 100%;
@@ -37,6 +37,11 @@ span{
 	.boton:hover, .botonMedio:hover, .botonLargo:hover {
 		background: #5A5E59;
 		border: 1px solid #5A5E59;
+		cursor: pointer;
+	}
+	/* Quitar marco azul o de punto cuando hacemos click */
+	.boton:focus, .botonMedio:focus, .botonLargo:focus {
+		outline: 0;
 	}
 
 .botonMedio {
@@ -47,7 +52,7 @@ span{
 	width: 140px;
 }
 
-.dato{
+.dato {
 	padding: 5px;
 	width: 200px;
 }

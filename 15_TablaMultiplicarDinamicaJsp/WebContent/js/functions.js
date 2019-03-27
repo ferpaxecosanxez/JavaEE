@@ -1,6 +1,13 @@
+/**
+ * Valida si una etiqueta de tipo "input" contiene valor.
+ * 
+ * @param idForm
+ *            Identificador del formulario definido.
+ * @returns true, si todo a ido bien,<br>
+ *          false, en caso contrario.
+ */
 function validaFormulario(form) {
-	// No hace falta buscarlo, ya lo tenemos.
-	//var form = document.getElementById(idForm);
+	// No hace falta buscarlo, ya lo tenemos (form).
 	var msg = "";
 	var error = false;
 
@@ -16,6 +23,16 @@ function validaFormulario(form) {
 					&& (value == null || value.length == 0 || /^\s+$/.test(value))) {
 				error = true;
 				msg += "El campo " + field +" est\u00E1 vac\u00CDo.\n\n";
+			}
+			if (itemForm.type == "password"
+				&& (value == null || value.length == 0 || /^\s+$/.test(value))) {
+				error = true;
+				msg += "El campo " + field +" debe contener una contrase\u00F1a.\n\n";
+			}
+			if (itemForm.type == "number"
+					&& (value == null || value.length == 0 || isNaN(value))) {
+				error = true;
+				msg += "El campo " + field + " debe contener n\u00FAmeros.\n\n";
 			}
 		}
 	}
