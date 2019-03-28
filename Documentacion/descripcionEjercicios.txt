@@ -144,3 +144,11 @@ Uso de <%! Método Java %> en JSP. Crear, escribir (Java) y leer una cookie (JSP
 Aplicación del ejercicio diecisiete, se le añade la funcionalidad de Cookie. La información que almacena una Cookie es texto y el el contenido es una fecha.
 Se aplica formato de fecha-hora de objeto LocalDateTime de Java, ello implica crear la Cookie usando objeto "URLEncoder" para codificar en Java y "URLDecoder" para descodificar y leer en JSP.
 No contiene carpeta JS.
+
+Ejercicio 20:
+Página de inicio JSP que lee Cookie.
+Uso de funcionalidad de Cookie para recordar el nombre de usuario cuando se realiza el formulario de Login.
+Se agrega carpeta JS y se añade validacion de campos vacíos para el formulario de Login.
+Es una copia del ejercicio catorce, pero el fichero "index.html" pasa a ser un JSP para poder leer la Cookie. Implica modificar el fichero web.xml para que la página de inicio no sea un HTML si no un JSP.
+Codificamos la página JSP en UTF-8.
+Si se marca el check, el valor que se envía es el que está adjunto al atributo de "value" del input. No se guarda el estado del check, es decir, si lo marcamos, en cuanto nos desconectemos, el check vuelve a su estado inicial (Sin marcar).

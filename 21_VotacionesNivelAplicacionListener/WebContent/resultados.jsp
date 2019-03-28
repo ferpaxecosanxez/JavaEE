@@ -1,6 +1,6 @@
+<%@page language="java" pageEncoding="UTF-8"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="java.math.RoundingMode"%>
-<%@page language="java" pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
 <html lang='es'>
@@ -26,14 +26,14 @@
     if(application.getAttribute("no") != null){
     	numNo = new BigDecimal((Integer) application.getAttribute("no"));
     }
-    // Dependiendo del valor obtenido, enviamos a una página u otra.
+    // Dependiendo del valor obtenido, enviamos a una pï¿½gina u otra.
     if(numSi.equals(BigDecimal.ZERO) && numNo.equals(BigDecimal.ZERO)){
     %>
-    	<!-- Invocar a página que informa que no hay votos -->
+    	<!-- Invocar a pï¿½gina que informa que no hay votos -->
     	<jsp:forward page="noHayVotos.html"/>
     <%
     }else{
-    	// El total de votos siempre será entero
+    	// El total de votos siempre serï¿½ entero
     	total = numSi.add(numNo);
     	totalSi = (numSi.multiply(BigDecimal.valueOf(100))).divide(total, 2, RoundingMode.CEILING);
         totalNo = (numNo.multiply(BigDecimal.valueOf(100))).divide(total, 2, RoundingMode.CEILING);

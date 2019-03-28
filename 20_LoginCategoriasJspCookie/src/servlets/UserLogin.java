@@ -15,11 +15,11 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Servlet que lee los datos enviados desde index.html y usa el nombre de
- * usuario para guardarlo como Atributo de sesión.
+ * usuario para guardarlo como Atributo de sesiÃ³n.
  * <p>
- * El atributo de sesión se genera, si solo si, el login es correcto.
+ * El atributo de sesiÃ³n se genera, si solo si, el login es correcto.
  * <p>
- * Se añade funcionalidad de Cookie, la cual, almacena el nombre de usuario
+ * Se aÃ±ade funcionalidad de Cookie, la cual, almacena el nombre de usuario
  * cuando se loguea.
  * 
  * @author fips
@@ -37,7 +37,7 @@ public class UserLogin extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		if (pass.compareTo("curso") == 0) {
-			// Login correcto, guardamos nombre de usuario como atributo de sesión
+			// Login correcto, guardamos nombre de usuario como atributo de sesiÃ³n
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", user);
 
@@ -47,7 +47,7 @@ public class UserLogin extends HttpServlet {
 				// Ha marcado el checkbox.
 				crearCookie(response, user);
 			} else {
-				// Si en algún momento marcó la opción y la desmarca, no se debe de recordar el
+				// Si en algÃºn momento marcÃ³ la opciÃ³n y la desmarca, no se debe de recordar el
 				// nombre de usuario.
 				crearCookie(response, "");
 			}
@@ -64,7 +64,7 @@ public class UserLogin extends HttpServlet {
 	}
 
 	/**
-	 * Método que genera un cookie, la cual almacena el nombre de usuario que se ha
+	 * MÃ©todo que genera un cookie, la cual almacena el nombre de usuario que se ha
 	 * logueado.
 	 * <p>
 	 * El nombre de usuario puede contener espacios, los cuales no se puede
@@ -73,8 +73,8 @@ public class UserLogin extends HttpServlet {
 	 * contenido almacenado en la cookie.
 	 * 
 	 * @param response
-	 *            Argumento que viene desde el método service(), se corresponde con
-	 *            el objeto de la cabecera de la petición.
+	 *            Argumento que viene desde el mÃ©todo service(), se corresponde con
+	 *            el objeto de la cabecera de la peticiÃ³n.
 	 * @param valor
 	 *            Nombre de usuario que se va ha almacenar.
 	 */
@@ -84,9 +84,9 @@ public class UserLogin extends HttpServlet {
 		Cookie ck;
 		try {
 			ck = new Cookie("ck_recordarUser", URLEncoder.encode(valor, "UTF-8"));
-			// Duración de vida de la cookie en el pc del cliente.
+			// DuraciÃ³n de vida de la cookie en el pc del cliente.
 			ck.setMaxAge(20000);
-			// Añadimos la cookie en la cabecera de la petición.
+			// AÃ±adimos la cookie en la cabecera de la peticiÃ³n.
 			response.addCookie(ck);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();

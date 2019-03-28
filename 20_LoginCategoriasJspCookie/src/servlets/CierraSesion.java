@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet que obtiene la sesi髇 actual para cerrarla, es decir, que borra toda
- * la informaci髇 a nivel de petici髇 y sesi髇.
+ * Servlet que obtiene la sesi贸n actual para cerrarla, es decir, que borra toda
+ * la informaci贸n a nivel de petici贸n y sesi贸n.
  * 
  * @author fips
  */
@@ -21,14 +21,14 @@ public class CierraSesion extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtenemos sesi髇.
+		// Obtenemos sesi贸n.
 		HttpSession sesion = request.getSession();
 
-		// Cerrar la sessi髇 de usuario
+		// Cerrar la sessi贸n de usuario
 		sesion.invalidate();
 
 		// Transferir a servlet de inicio. Nos da igual enviar o no respuesta al
-		// cliente, ya que estamos re dirigiendo a una p醙ina est醫ica de HTML 5, la
+		// cliente, ya que estamos re dirigiendo a una p谩gina est谩tica de HTML 5, la
 		// cual no puede leer atributos de servidor.
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

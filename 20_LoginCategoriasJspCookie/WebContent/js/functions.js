@@ -9,6 +9,7 @@ var optionName = "";
  *          false, en caso contrario.
  */
 function validaFormulario(form) {
+	// No hace falta buscarlo, ya lo tenemos (form).
 	var msg = "";
 	var error = false;
 
