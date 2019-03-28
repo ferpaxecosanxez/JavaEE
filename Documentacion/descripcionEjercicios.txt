@@ -122,3 +122,21 @@ Se añade validaciones JS para los campos del formulario encargado de agregar un
 Los formularios y tablas CSS pasan a tener el ancho que ocupen su contenido, es decir, "display: inline-block". Tambien agregamos que en el TYPE "numbre", cuando el usuario use las flechitas, el número aumente un 0,01 por cada pulsación (step="0.01").
 Definición de la codificación en los servlet a UTF-8, ya que cuando insertamos caracteres especiales en los formularios, estos no se alamacenan de forma correcta lo que implica que los muestra de forma incorrecta en la página web.
 
+Ejercicio 17:
+Contador JSP - Atributo de Aplicación.
+Uso de método init() de servlet para realizar acciones antes de formar el servlet y publicar en el servidor. Gestionamos variables a nivel de sesión y de aplicación.
+Al usar un atributo de aplicación, el cual es compartido por todas las sesiones de la aplicación, debemos usar el método synchronized de Java para que no se pierda información y no se bloqueen las sesiones que intentan acceder a la vez a los atributos de aplicación.
+Obtenemos el contexto de la aplicación ya que en dicho contexto es donde están los atributos de aplicación, la forma de acceso cambia, pero la idea es igual que cuando obtenemos la sesión.
+Al igual que en el ejercico once, definimos el TIMEOUT de la sesión, en este caso lo mantenemos en 1 minuto.
+Desde fichero JSP accedemos al nivel de sesión y aplicación para leer la información del los contadores.
+
+Ejercicio 18:
+Votaciones a nivel de Aplicación.
+Uso del método init() para inicializar valores, en este caso, variables a nivel de aplicación, seguimos usando método "synchronized".
+Lectura de datos de formulario, nivel petición y lectura de datos a nivel de aplicación.
+El tiempo de sesión se establece a 1 minuto, es decir, seguimos manteniendo fichero web.xml del ejercicio 11.
+Aplicamos nueva validación JS genérica para cualquier tipo de radio button.
+Definimos CSS para poder tener dos botones en formulario y el formulario centrado, basta con usar "display: inline-block".
+Desde fichero JSP accedemos al nivel de aplicación, agregamos una nueva "importación de objeto" para mostrar valores numéricos con dos decimales (BigDecimal).
+
+
