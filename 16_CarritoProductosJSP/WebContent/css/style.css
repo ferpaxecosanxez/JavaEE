@@ -22,6 +22,11 @@ form {
 	text-align: right;
 }
 
+span {
+	text-align: right;
+	padding-right: 5px;
+}
+
 .boton, .botonMedio, .botonLargo {
 	background: #313630;
  	border: 1px solid #313630;
@@ -69,14 +74,10 @@ form {
 
 .dato {
 	padding: 5px;
-	width: 200px;
 }
-
-.datoSpan {
-	padding-right: 5px;
-	text-align: right;
-	with: 150px;
-}
+	.dato, span {
+		display: inline-block;
+	}
 
 .datoComboBox {
 	padding: 5px;
