@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet que inicializa dos variables a nivel de aplicaci髇 y las actualiza.
- * Por otro lado, el cont閛 de los votos se hace mediante el env韔 de un
- * atributo de petici髇, el cu醠 puede contener un voto u otro.
+ * Servlet que inicializa dos variables a nivel de aplicaci贸n y las actualiza.
+ * Por otro lado, el cont茅o de los votos se hace mediante el env铆o de un
+ * atributo de petici贸n, el cu谩l puede contener un voto u otro.
  * <p>
  * Enviamos respuesta a cliente para evitarnos el configurar el navegador. Si no
  * enviamos respuesta al cliente, puede que los resultado no se actualicen.
@@ -27,7 +27,7 @@ public class CuentaVotos extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// Obtener aplicaci髇.
+		// Obtener aplicaci贸n.
 		ServletContext sc = config.getServletContext();
 
 		// Inicializar variable globales.
@@ -42,7 +42,7 @@ public class CuentaVotos extends HttpServlet {
 			throws ServletException, IOException {
 		// Obtener el dato del formulario index.html
 		String voto = request.getParameter("voto");
-		// Obtener aplicaci髇.
+		// Obtener aplicaci贸n.
 		ServletContext aplicacion = this.getServletContext();
 
 		int contSi, contNo;
@@ -60,8 +60,8 @@ public class CuentaVotos extends HttpServlet {
 			}
 		}
 
-		// Enviamos respuesta a cliente para que los resultados se actualicen sin
-		// necesidad de configurar el navegador.
+		// Enviamos respuesta a cliente para que los cont茅os se actualicen de forma
+		// autom谩tica.
 		response.sendRedirect("index.html");
 	}
 
