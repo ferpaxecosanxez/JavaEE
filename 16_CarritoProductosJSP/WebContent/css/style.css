@@ -74,6 +74,7 @@ span {
 
 .dato {
 	padding: 5px;
+	width: 200px;
 }
 	.dato, span {
 		display: inline-block;

@@ -119,8 +119,8 @@ En este ejercicio se ve como un fichero JSP puede leer una Lista de productos (L
 Por otro lado tenemos el como JSP hace una re dirección, es decir, que invoca a un recurso sin enviar respuesta a cliente (<jsp:forward page="recurso"/>).
 Para eliminar un producto, nos basamos en el índice, el cual se genera cuando estamos pintando la tabla de productos del carrito.
 Se añade validaciones JS para los campos del formulario encargado de agregar un nuevo producto en el carrito.
-Los formularios y tablas CSS pasan a tener el ancho que ocupen su contenido, es decir, "display: inline-block". Tambien agregamos que en el TYPE "numbre", cuando el usuario use las flechitas, el número aumente un 0,01 por cada pulsación (step="0.01").
-Definición de la codificación en los servlet a UTF-8, ya que cuando insertamos caracteres especiales en los formularios, estos no se alamacenan de forma correcta lo que implica que los muestra de forma incorrecta en la página web.
+Los formularios y tablas CSS pasan a tener el ancho que ocupen su contenido, es decir, "display: inline-block". Tambien agregamos que en el TYPE "number", cuando el usuario use las flechitas, el número aumente un 0,01 por cada pulsación (step="0.01").
+Definición de la codificación en los servlet a UTF-8, ya que cuando insertamos caracteres especiales en los formularios, estos no se tratan de forma correcta en los servlet, lo que implica que los mostrará de forma incorrecta en la página web.
 
 Ejercicio 17:
 Contador JSP - Atributo de Aplicación.
