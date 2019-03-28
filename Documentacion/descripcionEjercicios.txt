@@ -139,4 +139,8 @@ Aplicamos nueva validación JS genérica para cualquier tipo de radio button.
 Definimos CSS para poder tener dos botones en formulario y el formulario centrado, basta con usar "display: inline-block".
 Desde fichero JSP accedemos al nivel de aplicación, agregamos una nueva "importación de objeto" para mostrar valores numéricos con dos decimales (BigDecimal).
 
-
+Ejercicion 19:
+Uso de <%! Método Java %> en JSP. Crear, escribir (Java) y leer una cookie (JSP).
+Aplicación del ejercicio diecisiete, se le añade la funcionalidad de Cookie. La información que almacena una Cookie es texto y el el contenido es una fecha.
+Se aplica formato de fecha-hora de objeto LocalDateTime de Java, ello implica crear la Cookie usando objeto "URLEncoder" para codificar en Java y "URLDecoder" para descodificar y leer en JSP.
+No contiene carpeta JS.

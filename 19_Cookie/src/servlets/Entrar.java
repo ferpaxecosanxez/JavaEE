@@ -17,8 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet que añade la funcionalidad de agregar una cookie, es decir, que este
- * código es igual que el código del ejercicio 17_AtributoDeAplicacion.
+ * Servlet que aÃ±ade la funcionalidad de crear una cookie, la cual almacena la
+ * fecha del Ãºltimo voto dado. Es un copia lietral del ejercicio 17, pero le
+ * aÃ±adimos esta nueva funcionalidad.
  * 
  * @author fips
  * 
@@ -29,17 +30,17 @@ public class Entrar extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// En este método no es recomendable usar la palabra clave this para acceder a
-		// recursos del objeto, ya que este método parte de antes de la creación de este
-		// método, por tanto, para ahorrarnos excepciones de null, no usaremos this.
+		// En este mÃ©todo no es recomendable usar la palabra clave this para acceder a
+		// recursos del objeto, ya que este mÃ©todo parte de antes de la creaciÃ³n de este
+		// mÃ©todo, por tanto, para ahorrarnos excepciones de null, no usaremos this.
 
-		// Este método se usa para inicializar valores o realizar acciones antes de
+		// Este mÃ©todo se usa para inicializar valores o realizar acciones antes de
 		// generar el servlet, en este caso, inicializamos el valor de la variable de
-		// aplicación a 0 para luego no estar vericando si es null o no.
+		// aplicaciÃ³n a 0 para luego no estar vericando si es null o no.
 		ServletContext sc = config.getServletContext();
 		sc.setAttribute("global", 0);
 
-		// Llamada al método init padre.
+		// Llamada al mÃ©todo init padre.
 		super.init(config);
 	}
 
@@ -49,32 +50,32 @@ public class Entrar extends HttpServlet {
 		HttpSession session = request.getSession();
 		int valor;
 
-		// Varificar si el contador está inicializado.
+		// Varificar si el contador estÃ¡ inicializado.
 		if (session.getAttribute("contador") != null) {
-			// Existe el atributo de sesión.
+			// Existe el atributo de sesiÃ³n.
 			valor = (Integer) session.getAttribute("contador");
 			valor++;
-			// Actualizamos valor a nivel de sesión.
+			// Actualizamos valor a nivel de sesiÃ³n.
 			session.setAttribute("contador", valor);
 		} else {
-			// Si no existe, lo creamos y tendrá el valor de uno porque está entrando a este
+			// Si no existe, lo creamos y tendrÃ¡ el valor de uno porque estÃ¡ entrando a este
 			// servlet.
 			valor = 1;
 			session.setAttribute("contador", valor);
 		}
 
-		// Obtener aplicación para leer los atributos de aplicación.
+		// Obtener aplicaciÃ³n para leer los atributos de aplicaciÃ³n.
 		ServletContext aplicacion = this.getServletContext();
 
 		int global;
-		// Un atributo de aplicación es un recurso compartido por todos los usuarios,
+		// Un atributo de aplicaciÃ³n es un recurso compartido por todos los usuarios,
 		// por tanto debemos ponerlo en un bloque synchronized.
 		synchronized (aplicacion) {
-			// La línea siguiente no verifica si es nulo o no y es porque hemos iniciado el
-			// valor a 0 con el método init().
+			// La lÃ­nea siguiente no verifica si es nulo o no y es porque hemos iniciado el
+			// valor a 0 con el mÃ©todo init().
 			global = (Integer) aplicacion.getAttribute("global");
 			global++;
-			// Actualizamos valor a nivel de aplicación.
+			// Actualizamos valor a nivel de aplicaciÃ³n.
 			aplicacion.setAttribute("global", global);
 		}
 
@@ -82,7 +83,7 @@ public class Entrar extends HttpServlet {
 		crearCookie(response);
 
 		// Para no configurar navegador, enviamos respuesta a cliente para que el
-		// resultado se actualice a nivel de sesión y de aplicación.
+		// resultado se actualice a nivel de sesiÃ³n y de aplicaciÃ³n.
 		response.sendRedirect("index.html");
 
 		// Para no perder tiempo, no enviamos respuesta al cliente, aunque puede que
@@ -91,7 +92,7 @@ public class Entrar extends HttpServlet {
 	}
 
 	/**
-	 * Método que genera un cookie, la cual almacena la fecha del último voto dado.
+	 * MÃ©todo que genera un cookie, la cual almacena la fecha del Ãºltimo voto dado.
 	 * <p>
 	 * Se aplica formato de fecha, dicho formato contiene un espacio, el cual no se
 	 * puede almacenar en una cookie, por tanto, nos apoyamos en el objeto capaz de
@@ -99,8 +100,8 @@ public class Entrar extends HttpServlet {
 	 * contenido almacenado en la cookie.
 	 * 
 	 * @param response
-	 *            Argumento que viene desde el método service(), se corresponde con
-	 *            el objeto de la cabecera de la petición.
+	 *            Argumento que viene desde el mÃ©todo service(), se corresponde con
+	 *            el objeto de la cabecera de la peticiÃ³n.
 	 */
 	private void crearCookie(HttpServletResponse response) {
 		// Creamos fecha y le damos formato.
@@ -113,9 +114,9 @@ public class Entrar extends HttpServlet {
 		Cookie ck;
 		try {
 			ck = new Cookie("ck_visita", URLEncoder.encode(fechaStr, "UTF-8"));
-			// Duración de vida de la cookie en el pc del cliente.
+			// DuraciÃ³n de vida de la cookie en el pc del cliente.
 			ck.setMaxAge(20000);
-			// Añadimos la cookie en la cabecera de la petición.
+			// AÃ±adimos la cookie en la cabecera de la peticiÃ³n.
 			response.addCookie(ck);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
