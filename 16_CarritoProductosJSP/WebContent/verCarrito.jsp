@@ -1,4 +1,4 @@
-<%@page language="java" pageEncoding="ISO-8859-1"%>
+<%@page language="java" pageEncoding="UTF-8"%>
 <%@page import="beans.Producto"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>

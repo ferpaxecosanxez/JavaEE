@@ -29,11 +29,14 @@ public class Agregar extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// Definir en encodig antes de capturar los datos.
+		request.setCharacterEncoding("UTF-8");
+		
 		// Obtener parámetros y crear objeto.
 		String nombre = request.getParameter("nombre");
 		BigDecimal precio = new BigDecimal(request.getParameter("precio"));
 		String categoria = request.getParameter("categoria");
-
+		
 		Producto producto = new Producto(nombre, precio, categoria);
 
 		// Obtener la sesión de usuario.
