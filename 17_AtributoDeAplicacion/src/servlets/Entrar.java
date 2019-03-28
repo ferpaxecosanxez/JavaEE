@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet con mÈtodo init() que realiza acciones antes de generar el servlet en
- * sÌ.
+ * Servlet con m√©todo init() que realiza acciones antes de generar el servlet en
+ * s√≠.
  * <p>
- * Gestiona atributos a nivel de sesiÛn y de aplicaciÛn, para la gestiÛn de
- * atributos de aplicaciÛn usa el mÈtodo "synchronized()" para no perder
- * informaciÛn de las N sesiones.
+ * Gestiona atributos a nivel de sesi√≥n y de aplicaci√≥n, para la gesti√≥n de
+ * atributos de aplicaci√≥n usa el m√©todo "synchronized()" para no perder
+ * informaci√≥n de las N sesiones.
  * <p>
- * Realiza el contÈo a nivel de sesiÛn y aplicaciÛn, en el de sesiÛn se refleja
- * las entradas en la sesiÛn y en la de aplicaciÛn refleja el contÈo de todas
+ * Realiza el cont√©o a nivel de sesi√≥n y aplicaci√≥n, en el de sesi√≥n se refleja
+ * las entradas en la sesi√≥n y en la de aplicaci√≥n refleja el cont√©o de todas
  * las sesiones.
  * 
  * @author fips
@@ -32,57 +32,57 @@ public class Entrar extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// En este mÈtodo no es recomendable usar la palabra clave this para acceder a
-		// recursos del objeto, ya que este mÈtodo parte de antes de la creaciÛn de este
-		// mÈtodo, por tanto, para ahorrarnos excepciones de null, no usaremos this.
+		// En este m√©todo no es recomendable usar la palabra clave this para acceder a
+		// recursos del objeto, ya que este m√©todo parte de antes de la creaci√≥n de este
+		// m√©todo, por tanto, para ahorrarnos excepciones de null, no usaremos this.
 
-		// Este mÈtodo se usa para inicializar valores o realizar acciones antes de
+		// Este m√©todo se usa para inicializar valores o realizar acciones antes de
 		// generar el servlet, en este caso, inicializamos el valor de la variable de
-		// aplicaciÛn a 0 para luego no estar vericando si es null o no.
+		// aplicaci√≥n a 0 para luego no estar vericando si es null o no.
 		ServletContext sc = config.getServletContext();
 		sc.setAttribute("global", 0);
 
-		// Llamada al mÈtodo init padre.
+		// Llamada al m√©todo init padre.
 		super.init(config);
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Obtenemos la sesion del usuario.
+		// Obtenemos la SESION del usuario.
 		HttpSession session = request.getSession();
 		int valor;
 
-		// Varificar si el contador est· inicializado.
+		// Varificar si el contador de sesi√≥n est√° inicializado.
 		if (session.getAttribute("contador") != null) {
-			// Existe el atributo de sesiÛn.
+			// Existe el atributo de sesi√≥n.
 			valor = (Integer) session.getAttribute("contador");
 			valor++;
-			// Actualizamos valor a nivel de sesiÛn.
+			// Actualizamos valor a nivel de sesi√≥n.
 			session.setAttribute("contador", valor);
 		} else {
-			// Si no existe, lo creamos y tendr· el valor de uno porque est· entrando a este
+			// Si no existe, lo creamos y tendr√° el valor de uno porque est√° entrando a este
 			// servlet.
 			valor = 1;
 			session.setAttribute("contador", valor);
 		}
 
-		// Obtener aplicaciÛn para leer los atributos de aplicaciÛn.
-		ServletContext aplicacion = this.getServletContext();
+		// Obtener APLICACION para leer los atributos de aplicaci√≥n.
+		ServletContext application = this.getServletContext();
 
 		int global;
-		// Un atributo de aplicaciÛn es un recurso compartido por todos los usuarios,
+		// Un atributo de aplicaci√≥n es un recurso compartido por todos los usuarios,
 		// por tanto debemos ponerlo en un bloque synchronized.
-		synchronized (aplicacion) {
-			// La lÌnea siguiente no verifica si es nulo o no y es porque hemos iniciado el
-			// valor a 0 con el mÈtodo init().
-			global = (Integer) aplicacion.getAttribute("global");
+		synchronized (application) {
+			// No verificamos si es nulo o no porque hemos iniciado el valor a 0 con el
+			// m√©todo init().
+			global = (Integer) application.getAttribute("global");
 			global++;
-			// Actualizamos valor a nivel de aplicaciÛn.
-			aplicacion.setAttribute("global", global);
+			// Actualizamos valor a nivel de aplicaci√≥n.
+			application.setAttribute("global", global);
 		}
 
 		// Para no configurar navegador, enviamos respuesta a cliente para que el
-		// resultado se actualice a nivel de sesiÛn y de aplicaciÛn.
+		// resultado se actualice a nivel de sesi√≥n y de aplicaci√≥n.
 		response.sendRedirect("index.html");
 
 		// Para no perder tiempo, no enviamos respuesta al cliente, aunque puede que
