@@ -158,3 +158,4 @@ Uso de Listener @ WebListener.
 Es una copia del ejercicio dieciocho, la modificación que hacemos es quitar el método init() y sustituirlo por una clase de tipo "Listener" que realiza la misma funcionalidad, es decir, inicializar valores de las variables antes de crear el Servlet en sí.
 Existen 3 tipos de Listener importantes (https://www.arquitecturajava.com/servletcontextlistener/), el nuestro se ejecutará en cuanto arranque la aplicación, en este caso, inicializa valores al iniciar la apliación.
 Hemos usado una anotación, sin embargo se puede definir su funcionalidad y orden en el fichero web.xml, pero por comodidad lo hacemos por anotación.
+Recordar que a veces el JSP de resultados no se actualiza automáticamente, esto se debe a que estamos invocando de forma directa al fichero "resultados.jsp" desde el "onclick" del botón y ello implica que no damos respuesta al cliente, por tanto no se actualiza de forma automática (Hacemos Ctrl + F5).
