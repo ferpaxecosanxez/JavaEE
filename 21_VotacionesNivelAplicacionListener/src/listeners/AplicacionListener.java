@@ -6,18 +6,18 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 /**
- * Servlet de tipo Listener que inicializa dos variables a nivel de aplicaci髇.
+ * Servlet de tipo Listener que inicializa dos variables a nivel de aplicaci贸n.
  * <p>
- * Listener que se encarga de gestionar los eventos generales de la aplicaci髇
+ * Listener que se encarga de gestionar los eventos generales de la aplicaci贸n
  * como son arranque y parada.
  * <p>
- * Informaci髇 en: https://www.arquitecturajava.com/servletcontextlistener/
+ * Informaci贸n en: https://www.arquitecturajava.com/servletcontextlistener/
  * 
  * @author fips
  *
  */
 @WebListener
-public class Aplicacion implements ServletContextListener {
+public class AplicacionListener implements ServletContextListener {
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
@@ -26,7 +26,7 @@ public class Aplicacion implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
-		// Obtener aplicaci髇.
+		// Obtener aplicaci贸n.
 		ServletContext sc = arg0.getServletContext();
 
 		// Inicializar variable globales.

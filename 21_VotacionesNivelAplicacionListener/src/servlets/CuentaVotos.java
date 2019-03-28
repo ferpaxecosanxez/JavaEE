@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * El contÈo de los votos se hace mediante el envÌo de un atributo de peticiÛn,
- * el cu·l puede contener un voto u otro.
+ * El cont√©o de los votos se hace mediante el env√≠o de un atributo de petici√≥n,
+ * el cu√°l puede contener un voto u otro.
  * <p>
  * Enviamos respuesta a cliente para evitarnos el configurar el navegador. Si no
  * enviamos respuesta al cliente, puede que los resultado no se actualicen.
@@ -28,7 +28,7 @@ public class CuentaVotos extends HttpServlet {
 			throws ServletException, IOException {
 		// Obtener el dato del formulario index.html
 		String voto = request.getParameter("voto");
-		// Obtener aplicaciÛn.
+		// Obtener aplicaci√≥n.
 		ServletContext aplicacion = this.getServletContext();
 
 		int contSi, contNo;

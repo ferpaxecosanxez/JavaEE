@@ -152,3 +152,9 @@ Se agrega carpeta JS y se añade validacion de campos vacíos para el formulario
 Es una copia del ejercicio catorce, pero el fichero "index.html" pasa a ser un JSP para poder leer la Cookie. Implica modificar el fichero web.xml para que la página de inicio no sea un HTML si no un JSP.
 Codificamos la página JSP en UTF-8.
 Si se marca el check, el valor que se envía es el que está adjunto al atributo de "value" del input. No se guarda el estado del check, es decir, si lo marcamos, en cuanto nos desconectemos, el check vuelve a su estado inicial (Sin marcar).
+
+Ejercicio 21:
+Uso de Listener @ WebListener.
+Es una copia del ejercicio dieciocho, la modificación que hacemos es quitar el método init() y sustituirlo por una clase de tipo "Listener" que realiza la misma funcionalidad, es decir, inicializar valores de las variables antes de crear el Servlet en sí.
+Existen 3 tipos de Listener importantes (https://www.arquitecturajava.com/servletcontextlistener/), el nuestro se ejecutará en cuanto arranque la aplicación, en este caso, inicializa valores al iniciar la apliación.
+Hemos usado una anotación, sin embargo se puede definir su funcionalidad y orden en el fichero web.xml, pero por comodidad lo hacemos por anotación.
