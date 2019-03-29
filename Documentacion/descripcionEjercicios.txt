@@ -59,9 +59,13 @@ Para dar respuesta al cliente de forma directa, usaremos el objeto RESPONSE, el 
 En las llamadas a otros servlets, si no se adjuntan los datos, estos nunca llegarán, ya que al enviar la respuesta a cliente, los datos existentes en el objeto request desaparecen.
 Usa JS para las validaciones de formulario.
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>> Resumen:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >> La diferencia en dar o no respuesta al cliente reside en:
 >> 1º Si no damos respuesta a cliente, no perdemos los datos de la petición y es más rápida la navegación. No se actualiza página.
 >> 2º Si la damos, perdemos los datos de la petición y es más lenta la navegación. Tiene actualización automática de página.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 Ejercicio 10:
 Login simple - Atributo de Petición.
@@ -165,3 +169,18 @@ Partimos del ejercicio veinte, es decir, contador a nivel de sesión y aplicaci�
 El cambio que aplicacamos es la inicialización de las varaibles a nivel de sesióny de aplicación. En el ejercicio anterios hemos visto Listener a nivel de aplicación y en este veremos Listener a nivel de sesión, a nivel de funcionalidad es lo mismo, pero se hace de forma distinta.
 El cambio lo podemos apreciar en la clase "Entrar.java" que antes se encargaba de inicializar la variables y ahora no, porque generamos dos nuevas clases, cada una se corresponde con el nivel, es decir, un Listener para nivel de Aplicación y otro a nivel de Sesión.
 La particularidad de este ejercicio es que podemos acceder desde la sesión al nivel de aplicación, en este caso para actualizar el contador de sesiones abiertas, es decir, los usuarios conectados. Por otro lado cuando el TIMEOUT pasa, automáticamente se actualiza la variable de usuarios conectados, esto es posible porque definimos en el método "sessionDestroyed" que se ejecuta cuando una sesión acaba y su funcionalidad es esa, restar -1 a la variable de aplicación.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>> Resumen:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>> Diferencias de variables en servidor.
+>> Variable de Petición: Datos que viajan en el objeto "request" y que se pierden si damos respuesta al cliente.
+>> Variable de Sesión: Los datos existen mientras la sesión este activa, se puede definir el tiempo de vida de una sesión en el fichero "web.xml".
+>> Varaible de Aplicación: Los datos existen mientras la aplicación esté arracanda.
+>> Podemos definir Listener (escuchadores) a nivel de sesión y aplicación, estos escuchadores realizan acciones cuando se crea o destruye una sesión o aplicación.
+>> Los datos de la sesión y aplicación no se pierden si damos respuesta a cliente.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---------------------------------------------------------------------
+-- Uso de Base de Datos (DataSource en Tomcat)
+---------------------------------------------------------------------
