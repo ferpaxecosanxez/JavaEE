@@ -141,7 +141,7 @@ Desde fichero JSP accedemos al nivel de aplicación, agregamos una nueva "import
 
 Ejercicion 19:
 Uso de <%! Método Java %> en JSP. Crear, escribir (Java) y leer una cookie (JSP).
-Aplicación del ejercicio diecisiete, se le añade la funcionalidad de Cookie. La información que almacena una Cookie es texto y el el contenido es una fecha.
+Aplicación del ejercicio diecisiete, se le añade la funcionalidad de Cookie. La información que almacena una Cookie es texto y el contenido es la última fecha de acceso de la sesión actual.
 Se aplica formato de fecha-hora de objeto LocalDateTime de Java, ello implica crear la Cookie usando objeto "URLEncoder" para codificar en Java y "URLDecoder" para descodificar y leer en JSP.
 No contiene carpeta JS.
 
@@ -159,3 +159,9 @@ Es una copia del ejercicio dieciocho, la modificación que hacemos es quitar el 
 Existen 3 tipos de Listener importantes (https://www.arquitecturajava.com/servletcontextlistener/), el nuestro se ejecutará en cuanto arranque la aplicación, en este caso, inicializa valores al iniciar la apliación.
 Hemos usado una anotación, sin embargo se puede definir su funcionalidad y orden en el fichero web.xml, pero por comodidad lo hacemos por anotación.
 Recordar que a veces el JSP de resultados no se actualiza automáticamente, esto se debe a que estamos invocando de forma directa al fichero "resultados.jsp" desde el "onclick" del botón y ello implica que no damos respuesta al cliente, por tanto no se actualiza de forma automática (Hacemos Ctrl + F5).
+
+Ejercicio 22:
+Partimos del ejercicio veinte, es decir, contador a nivel de sesión y aplicación, se gestiona una cookie que almacena la fecha de la última visita de una sesión actual.
+El cambio que aplicacamos es la inicialización de las varaibles a nivel de sesióny de aplicación. En el ejercicio anterios hemos visto Listener a nivel de aplicación y en este veremos Listener a nivel de sesión, a nivel de funcionalidad es lo mismo, pero se hace de forma distinta.
+El cambio lo podemos apreciar en la clase "Entrar.java" que antes se encargaba de inicializar la variables y ahora no, porque generamos dos nuevas clases, cada una se corresponde con el nivel, es decir, un Listener para nivel de Aplicación y otro a nivel de Sesión.
+La particularidad de este ejercicio es que podemos acceder desde la sesión al nivel de aplicación, en este caso para actualizar el contador de sesiones abiertas, es decir, los usuarios conectados. Por otro lado cuando el TIMEOUT pasa, automáticamente se actualiza la variable de usuarios conectados, esto es posible porque definimos en el método "sessionDestroyed" que se ejecuta cuando una sesión acaba y su funcionalidad es esa, restar -1 a la variable de aplicación.
