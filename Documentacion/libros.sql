@@ -77,4 +77,14 @@ insert into Tema values
 
 insert into Libro values
 (1, "La ciudad del fuego", "Kate Mosse", 21.90, 640, 1),
-(2, "Star Wars Secretos de la galaxia", "Daniel Wallace", 80.00, 640, 2)
+(2, "Star Wars Secretos de la galaxia", "Daniel Wallace", 80.00, 640, 2),
+(3, "Cuentos de Lucía, mi pediatra", "Lucía Galán Bertrand", 15.95, 96, 3),
+(4, "La revolución de las canas", "Iñaki Ortega Cachón | Antonio Huertas Mejías", 16.95, 250, 4),
+(5, "La confianza en uno mismo", "Charles Pepin", 17.90, 192, 5),
+(6, "1000 recetas de oro", "Karlos Arguiñano", 24.95, 728, 6),
+(7, "Vivir sin plástico", "Patricia Reina Toresano | Fernando Gómez Soria", 16.95, 208, 7),
+(8, "Nuestro planeta", "Alistair Fothergill | Keith Scholey", 29.95, 320, 8),
+(9, "Elevate", "Pepe Monserrate", 15.90, 200, 9)
+
+
+
