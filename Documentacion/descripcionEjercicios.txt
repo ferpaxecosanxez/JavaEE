@@ -186,7 +186,7 @@ La particularidad de este ejercicio es que podemos acceder desde la sesión al n
 ---------------------------------------------------------------------
 Ejercicio 23:
 Usamos TRY/CATCH con recursos, que básicamente lo que hace es cerrar una conexión a BD cuando finaliza el código implementado dentro del bloque try/catch.
-Es una copia del ejercicio veinte.
+Es una copia del ejercicio veinte. Primer contacto con JDBC a nivel local.
 La verificación de si la contraseña es correcta o no, la realizamos sobre la base de datos, es decir, se captura el usuario y contraseña para realizar una consulta sobre la BD y si las credenciales son correctas, se tendrá acceso a la aplicación, de lo contrario nos redirige a la página de error.
 
 Hay que tener en cuenta que a partir de la versión 6 del JDBC el nombre del driver y parámetros en la URL cambiar. Si estamos en JAVA tendremos que usar:
