@@ -16,14 +16,13 @@ import java.sql.SQLException;
  * @author fips
  *
  */
-public class GestionClientes {
+public class GestionCliente {
 	private StringBuffer url = new StringBuffer();
 	private String user = "root";
 	private String pwd = "admin";
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	//url="useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"
 
-	public GestionClientes() {
+	public GestionCliente() {
 		// Varifica que el driver existe, no es el mejor sitio para por el código pero
 		// lo hacemos así por facilidad.
 		try {
@@ -53,8 +52,8 @@ public class GestionClientes {
 	 *         false, en caso contrario.
 	 */
 	public boolean autenticar(String usuario, String pass) {
-		boolean res = false;
-		String sql = "SELECT * FROM usuario WHERE usuario=? and pass=?";
+		boolean result = false;
+		String sql = "SELECT * FROM usuario WHERE usuario = ? and pass = ?";
 
 		// try/cath con recursos.
 		try (Connection cn = DriverManager.getConnection(url.toString(), user, pwd)) {
@@ -67,12 +66,12 @@ public class GestionClientes {
 			ResultSet rs = ps.executeQuery();
 			// Movemos el cursor 1 vez, si se ha realizado el movimiento del cursor,
 			// significa que existe registro.
-			res = rs.next();
+			result = rs.next();
 			
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
-		return res;
+		return result;
 	}
 	
 }

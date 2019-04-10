@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import modelo.GestionClientes;
+import modelo.GestionCliente;
 
 /**
  * Servlet que lee los datos enviados desde index.html y usa el nombre de
@@ -40,7 +40,7 @@ public class UserLogin extends HttpServlet {
 		String user = request.getParameter("user");
 
 		// Ahora atacamos la BD para verificar las credenciales.
-		GestionClientes gc = new GestionClientes();
+		GestionCliente gc = new GestionCliente();
 
 		RequestDispatcher rd = null;
 		if (gc.autenticar(user, pass)) {
