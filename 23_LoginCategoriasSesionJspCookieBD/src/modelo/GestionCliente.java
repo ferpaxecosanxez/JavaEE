@@ -34,6 +34,7 @@ public class GestionCliente {
 			url.append("&useJDBCCompliantTimezoneShift=true");
 			url.append("&useLegacyDatetimeCode=false");
 			url.append("&serverTimezone=UTC");
+			url.append("&allowPublicKeyRetrieval=true");
 			
 			Class.forName(driver);
 		} catch (ClassNotFoundException e) {
