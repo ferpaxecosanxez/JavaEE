@@ -19,20 +19,20 @@
     BigDecimal totalSi = BigDecimal.ZERO; 
     BigDecimal totalNo = BigDecimal.ZERO;
     // Votos de si.
-    if(application.getAttribute("si") != null){
+    if (application.getAttribute("si") != null) {
     	numSi = new BigDecimal((Integer) application.getAttribute("si"));
     }
     // Votos de no.
-    if(application.getAttribute("no") != null){
+    if (application.getAttribute("no") != null) {
     	numNo = new BigDecimal((Integer) application.getAttribute("no"));
     }
     // Dependiendo del valor obtenido, enviamos a una página u otra.
-    if(numSi.equals(BigDecimal.ZERO) && numNo.equals(BigDecimal.ZERO)){
+    if (numSi.equals(BigDecimal.ZERO) && numNo.equals(BigDecimal.ZERO)) {
     %>
     	<!-- Invocar a página que informa que no hay votos -->
     	<jsp:forward page="noHayVotos.html"/>
     <%
-    }else{
+    } else {
     	// El total de votos será la suma de los votos positivos y negativos.
     	total = numSi.add(numNo);
     	totalSi = (numSi.multiply(BigDecimal.valueOf(100))).divide(total, 2, RoundingMode.CEILING);
