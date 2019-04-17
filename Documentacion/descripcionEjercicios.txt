@@ -125,6 +125,8 @@ Para eliminar un producto, nos basamos en el índice, el cual se genera cuando e
 Se añade validaciones JS para los campos del formulario encargado de agregar un nuevo producto en el carrito.
 Los formularios y tablas CSS pasan a tener el ancho que ocupen su contenido, es decir, "display: inline-block". Tambien agregamos que en el TYPE "number", cuando el usuario use las flechitas, el número aumente un 0,01 por cada pulsación (step="0.01").
 Definición de la codificación en los servlet a UTF-8, ya que cuando insertamos caracteres especiales en los formularios, estos no se tratan de forma correcta en los servlet, lo que implica que los mostrará de forma incorrecta en la página web.
+// Definir en encodig antes de leer/obtener los datos.
+request.setCharacterEncoding("UTF-8");
 
 Ejercicio 17:
 Contador JSP - Atributo de Aplicación.
@@ -141,7 +143,7 @@ Lectura de datos de formulario, nivel petición y lectura de datos a nivel de ap
 El tiempo de sesión se establece a 1 minuto, es decir, seguimos manteniendo fichero web.xml del ejercicio 11.
 Aplicamos nueva validación JS genérica para cualquier tipo de radio button.
 Definimos CSS para poder tener dos botones en formulario y el formulario centrado, basta con usar "display: inline-block".
-Desde fichero JSP accedemos al nivel de aplicación, agregamos una nueva "importación de objeto" para mostrar valores numéricos con dos decimales (BigDecimal).
+Desde fichero JSP accedemos al nivel de aplicación, agregamos una nueva "importación de objeto" para mostrar valores numéricos con dos decimales (<%@page import="java.math.BigDecimal"%>).
 
 Ejercicion 19:
 Uso de <%! Método Java %> en JSP. Crear, escribir (Java) y leer una cookie (JSP).
@@ -182,11 +184,12 @@ La particularidad de este ejercicio es que podemos acceder desde la sesión al n
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ---------------------------------------------------------------------
--- Uso de Base de Datos (DataSource en Tomcat)
+-- Uso de JDBC
 ---------------------------------------------------------------------
+
 Ejercicio 23:
 Usamos TRY/CATCH con recursos, que básicamente lo que hace es cerrar una conexión a BD cuando finaliza el código implementado dentro del bloque try/catch.
-Es una copia del ejercicio veinte. Primer contacto con JDBC a nivel local.
+Es una copia del ejercicio veinte. Primer contacto con JDBC a nivel local ya que debemos importar el JAR.
 La verificación de si la contraseña es correcta o no, la realizamos sobre la base de datos, es decir, se captura el usuario y contraseña para realizar una consulta sobre la BD y si las credenciales son correctas, se tendrá acceso a la aplicación, de lo contrario nos redirige a la página de error.
 
 Hay que tener en cuenta que a partir de la versión 6 del JDBC el nombre del driver y parámetros en la URL cambiar. Si estamos en JAVA tendremos que usar:
@@ -199,11 +202,38 @@ private StringBuffer url = new StringBuffer();
 	url.append("&useJDBCCompliantTimezoneShift=true");
 	url.append("&useLegacyDatetimeCode=false");
 	url.append("&serverTimezone=UTC");
+	url.append("&allowPublicKeyRetrieval=true");
 
 Mientras si estamos en DataSource que es XML tendremos que usar:
 <Resource auth="Container"
 			driverClassName="com.mysql.cj.jdbc.Driver" name="jdbc/bancoDS"
 			username="fips" password="admin" type="javax.sql.DataSource"
-			url="jdbc:mysql://localhost:3306/banco?autoReconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
+			url="jdbc:mysql://localhost:3306/banco?
+				autoReconnect=true&amp;
+				useSSL=false&amp;
+				useUnicode=true&amp;
+				useJDBCCompliantTimezoneShift=true&amp;
+				useLegacyDatetimeCode=false&amp;
+				serverTimezone=UTC&amp;
+				allowPublicKeyRetrieval=true" />
 
 El detalle está que en JAVA usamos "&" y en XML usamos "&amp;". En ello hay que tener cuidado.
+Otro detalle importante es que debemos cerrar siempre los objetos "Connection", "PreparedStatement" y "ResultSet". Los podemos cerrar usando try/cath con recursos o invocando al método "close()". ResultsSet (rs) es un objeto que apunta al objeto PreparedStatement (ps) y si cierro "ps", el objeto "rs" también estará cerrado y no podremos usar el método "rs.next()", además el orden en el que lo cerrando es primero "rs" y al final "ps". Estos detalles nos podemos olvidar si los objetos los ponemos en un try/catch con recursos.
+
+Ejercicio 24:
+En este ejercicio aplicamos la creación de BEANS, cada creación tiene su clase especializada (Servicio). Tenemos que tener en cuenta que la tabla CONTACTO y TELEFONO están relacionadas. Lo que mostramos al cliente es información parcial de las dos, por tanto tenemos que generar un objeto de dominio de cara al cliente.
+Cuando agregamos un nuevo ContactoAgenda (Bean de dominio), primero tenemos que generar el registro CONTACTO y luego el de TELEFONO. Ojo que la FK es el "id" del contacto, por tanto tendremos que obtener el "id" que la BD a autogenerado (El esquedama E/R así está implementado). Para ello usamos un parámetro adicional:
+
+"PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);"
+
+Por otro lado, es el primer contacto que tenemos con ENUM, el cual define tipos específicos de teléfono ya que en la BD (tipo enum ('Movil', 'Fijo', 'Trabajo') not null,) se definen igual.
+Ejecutar query preparadas:
+
+"executeQuery()" para SELECT que nos devuelve un ResultSet.
+"executeUpdate()" para INSERT, UPDATE y DELETE que nos devuelve el número de registros afetados.
+
+Añadimos validación JS de que exista una opción seleccionada en el ComboBox, la cual se basa en si el valor el 0 la validación saltará porque ese valor significada que no se ha seleccionada ópción disponible.
+
+---------------------------------------------------------------------
+-- Uso de Base de Datos (DataSource en Tomcat)
+---------------------------------------------------------------------
