@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title>Nuevo Contacto</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Nuevo contacto</h1>
+	</header>
+	
+	<div class="main">
+		<h1>Introduzca sus datos:</h1>
+		
+		<br/>
+		<form action="Controlador?op=doAltaContacto" method="post"
+			onsubmit="return validaFormulario(this)">
+			<span>Nombre:</span>
+			<input class="dato" type="text" name="nombre"/>
+			
+			<br/><br/>
+			<span>Dirección:</span>
+			<input class="dato" type="text" name="direccion"/>
+			
+			<br/><br/>
+			<span>Telefono:</span>
+			<input class="dato" type="text" name="telefono"/>
+			
+			<br/><br/>
+			<span>Tipo Teléfono:</span>
+			<select	class="opcionesComboBox" name="tipo_telefono" size="1">
+				<option value="0" selected>Seleccione...</option>
+				<option value="Movil">Movil</option>
+				<option value="Fijo">Fijo</option>
+				<option value="Trabajo">Trabajo</option>
+			</select>
+			
+			<br/><br/>
+			<div class="formFooter">
+				<input class="botonMedio" type="submit" value="Guardar"/>
+				
+				<input class="botonMedio" type="button" value="Volver" 
+					onClick="window.location.href='Controlador?op=toIndex'"/>
+			</div>			
+		</form>
+	</div>
+	
+	<script src="js/functions.js"></script>
+</body>
+</html>
