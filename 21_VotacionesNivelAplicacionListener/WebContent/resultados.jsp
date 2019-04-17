@@ -43,15 +43,15 @@
 	    </header>
 	    
 	    <div class="main">
-	           <h3>Si: <%=numSi + " votos " + totalSi%>%</h3>
-	           <h3>No: <%=numNo + " votos " + totalNo%>%</h3>
-	           
-	           <br/>
-	           <h3>Total votos: <%=total%> votos</h3>
-	           
-	           <br/><br/>
-	           <input class="botonMedio" type="submit" value="Volver" 
-	                  onClick="window.location.href='index.html'"/>
+			<h3>Si: <%=numSi + " votos " + totalSi%>%</h3>
+			<h3>No: <%=numNo + " votos " + totalNo%>%</h3>
+			
+			<br/>
+			<h3>Total votos: <%=total%> votos</h3>
+			
+			<br/><br/>
+			<input class="botonMedio" type="button" value="Volver" 
+			       onClick="window.location.href='index.html'"/>
 	    </div>
     <%
     }      

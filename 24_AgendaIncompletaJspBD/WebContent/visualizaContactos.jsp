@@ -47,7 +47,7 @@
 			</table>
 			
 			<br/><br/>
-			<input class="botonMedio" type="submit" value="Volver" 
+			<input class="botonMedio" type="button" value="Volver" 
 				onClick="window.location.href='index.html'"/>
 		</div>
 	<%
