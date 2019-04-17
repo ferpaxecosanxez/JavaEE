@@ -65,11 +65,11 @@ public class GestionCliente {
 
 			// Ejecutar y ver resultados.
 			ResultSet rs = ps.executeQuery();
-			ps.close();
 			// Movemos el cursor 1 vez, si se ha realizado el movimiento del cursor,
 			// significa que existe registro.
 			result = rs.next();
 			rs.close();
+			ps.close();
 			
 		} catch (SQLException ex) {
 			ex.printStackTrace();
