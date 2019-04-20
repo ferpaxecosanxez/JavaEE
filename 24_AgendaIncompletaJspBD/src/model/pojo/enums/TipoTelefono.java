@@ -1,4 +1,4 @@
-package model.bean.enums;
+package model.pojo.enums;
 
 /**
  * Clase que define los tipos posibles de teléfono. Los tipos definidos son los

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.bean.Contacto;
+import model.pojo.Contacto;
 
 /**
  * Clase que actúa como Servicio y DAO de la entidad CONTACTO.

@@ -1,24 +1,16 @@
-package model.bean;
+package model.domain.pojo;
 
 /**
- * Bean simple que contiene información básica de un contacto.
+ * Bean de dominio que representa información de las entidades CONTACTO y
+ * TELEFONO.
  * 
  * @author fips
  *
  */
-public class Contacto {
-	private int id;
+public class ContactoAgenda {
 	private String nombre;
 	private String direccion;
-	private String descripcion;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	private String telefono;
 
 	public String getNombre() {
 		return nombre;
@@ -36,25 +28,23 @@ public class Contacto {
 		this.direccion = direccion;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Contacto [id=");
-		builder.append(id);
-		builder.append(", nombre=");
+		builder.append("ContactoAgenda [nombre=");
 		builder.append(nombre);
 		builder.append(", direccion=");
 		builder.append(direccion);
-		builder.append(", descripcion=");
-		builder.append(descripcion);
+		builder.append(", telefono=");
+		builder.append(telefono);
 		builder.append("]");
 		return builder.toString();
 	}

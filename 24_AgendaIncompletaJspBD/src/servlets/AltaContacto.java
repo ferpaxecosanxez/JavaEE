@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.bean.Contacto;
-import model.bean.Telefono;
-import model.bean.enums.TipoTelefono;
+import model.pojo.Contacto;
+import model.pojo.Telefono;
+import model.pojo.enums.TipoTelefono;
 import model.service.GestionContacto;
 import model.service.GestionTelefono;
 

@@ -1,6 +1,6 @@
-package model.bean;
+package model.pojo;
 
-import model.bean.enums.TipoTelefono;
+import model.pojo.enums.TipoTelefono;
 
 /**
  * Bean simple que contiene información básica de un teléfono.
