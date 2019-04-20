@@ -1,4 +1,4 @@
-package model.bean;
+package model.pojo;
 
 /**
  * Bean simple que contiene información básica de un contacto.

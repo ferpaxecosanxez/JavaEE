@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.bean.Telefono;
-import model.bean.enums.TipoTelefono;
+import model.pojo.Telefono;
+import model.pojo.enums.TipoTelefono;
 
 /**
  * Clase que actúa como Servicio y DAO de la entidad TELEFONO.

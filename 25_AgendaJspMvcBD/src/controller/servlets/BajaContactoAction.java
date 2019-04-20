@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.bean.Telefono;
+import model.pojo.Telefono;
 import model.service.GestionContacto;
 import model.service.GestionTelefono;
 

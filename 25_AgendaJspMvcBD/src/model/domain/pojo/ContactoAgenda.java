@@ -1,4 +1,4 @@
-package model.domain.bean;
+package model.domain.pojo;
 
 /**
  * Bean de dominio que representa información de las entidades CONTACTO y
