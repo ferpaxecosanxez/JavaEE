@@ -1,5 +1,5 @@
 <%@page language="java" pageEncoding="UTF-8"%>
-<%@page import="model.domain.bean.ContactoAgenda"%>
+<%@page import="model.domain.pojo.ContactoAgenda"%>
 <%@page import="java.util.List"%>
 
 <!DOCTYPE html>
