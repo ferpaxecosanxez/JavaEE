@@ -220,6 +220,10 @@ Mientras si estamos en DataSource que es XML tendremos que usar:
 El detalle está que en JAVA usamos "&" y en XML usamos "&amp;". En ello hay que tener cuidado.
 Otro detalle importante es que debemos cerrar siempre los objetos "Connection", "PreparedStatement" y "ResultSet". Los podemos cerrar usando try/cath con recursos o invocando al método "close()". ResultsSet (rs) es un objeto que apunta al objeto PreparedStatement (ps) y si cierro "ps", el objeto "rs" también estará cerrado y no podremos usar el método "rs.next()", además el orden en el que lo cerrando es primero "rs" y al final "ps". Estos detalles nos podemos olvidar si los objetos los ponemos en un try/catch con recursos.
 
+Pasos para importar el JAR correspondiente al JDBC.
+1. Properties > Java Build Parth > Libraries > Add JARs > Documentacion/Librerias/mysql-connector-java > OK.
+2. Properties > Deployment Assembly > Add > Java Build Path Entries > Next > Nuestro JAR.
+
 Ejercicio 24:
 En este ejercicio aplicamos la creación de BEANS, cada creación tiene su clase especializada (Servicio). Tenemos que tener en cuenta que la tabla CONTACTO y TELEFONO están relacionadas. Lo que mostramos al cliente es información parcial de las dos, por tanto tenemos que generar un objeto de dominio de cara al cliente.
 Cuando agregamos un nuevo ContactoAgenda (Bean de dominio), primero tenemos que generar el registro CONTACTO y luego el de TELEFONO. Ojo que la FK es el "id" del contacto, por tanto tendremos que obtener el "id" que la BD a autogenerado (El esquedama E/R así está implementado). Para ello usamos un parámetro adicional:
