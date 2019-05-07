@@ -1,5 +1,5 @@
 <%@page language="java" pageEncoding="UTF-8"%>
-<%@page import="beans.Producto"%>
+<%@page import="pojos.Producto"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang='es'>

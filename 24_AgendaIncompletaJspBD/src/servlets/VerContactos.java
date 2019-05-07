@@ -19,7 +19,7 @@ import model.service.GestionTelefono;
 
 /**
  * Servlet que obtiene todos los registros de CONTACTO y TELEFONO. Con la
- * información obtenida genera Bean de dominio (ContactoAgenda) para mostrarlo
+ * información obtenida genera pojo de dominio (ContactoAgenda) para mostrarlo
  * al cliente.
  * <p>
  * En teoría cada CONTACTO puede tener varios TELEFONO, pero por no complicar
@@ -51,7 +51,7 @@ public class VerContactos extends HttpServlet {
 
 			if (optional.isPresent()) {
 				Telefono telefono = optional.get();
-				// Creamos bean de dominio.
+				// Creamos pojo de dominio.
 				ContactoAgenda contactoAgenda = new ContactoAgenda();
 				contactoAgenda.setNombre(contacto.getNombre());
 				contactoAgenda.setTelefono(telefono.getTelefono());

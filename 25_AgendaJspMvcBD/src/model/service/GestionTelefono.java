@@ -48,9 +48,9 @@ public class GestionTelefono {
 	}
 
 	/**
-	 * Crea un registro en la tabla TELEFONO a partir de un bean sin ID.
+	 * Crea un registro en la tabla TELEFONO a partir de un pojo sin ID.
 	 * 
-	 * @param telefono Bean que contiene la información a almacenar.
+	 * @param telefono Pojo que contiene la información a almacenar.
 	 * @return 1, si el registro se ha creado correctamente.<br>
 	 *         -1, si existe algún error.
 	 */

@@ -22,7 +22,7 @@ import model.service.GestionTelefono;
  * Para simplificar, daremos por hecho que cada contacto tiene un único teléfono
  * asociado, por tanto, si tenemos el id de un CONTACTO, podremos borrar el
  * registro de TELEFONO mediante su FK que es única en la misma. Es decir, que
- * no necesitamos recuperar un bean de contacto y un bean teléfono para luego
+ * no necesitamos recuperar un pojo de contacto y un pojo teléfono para luego
  * borraralo.
  * 
  * @author fips

@@ -47,12 +47,12 @@ public class GestionContacto {
 	}
 
 	/**
-	 * Crea un registro en la tabla CONTACTO a partir de un bean sin ID.
+	 * Crea un registro en la tabla CONTACTO a partir de un pojo sin ID.
 	 * <p>
 	 * En este caso solo usaremos los campos "nombre" y "direccion" ya que el ID es
 	 * autogenerado y la descripción tiene valor por defecto.
 	 * 
-	 * @param contacto Bean que contiene la información a almacenar.
+	 * @param contacto Pojo que contiene la información a almacenar.
 	 * @return 1, si el registro se ha creado correctamente.<br>
 	 *         -1, si existe algún error.
 	 */

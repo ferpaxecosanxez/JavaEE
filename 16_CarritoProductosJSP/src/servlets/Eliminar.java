@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.Producto;
+import pojos.Producto;
 
 /**
  * Servlet que elimina un objeto Producto de la lista almacenada en sesión que

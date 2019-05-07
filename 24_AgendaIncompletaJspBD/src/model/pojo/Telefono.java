@@ -3,7 +3,7 @@ package model.pojo;
 import model.pojo.enums.TipoTelefono;
 
 /**
- * Bean simple que contiene información básica de un teléfono.
+ * Pojo simple que contiene información básica de un teléfono.
  * 
  * @author fips
  *

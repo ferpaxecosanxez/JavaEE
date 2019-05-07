@@ -1,7 +1,7 @@
 package model.pojo;
 
 /**
- * Bean simple que contiene información básica de un contacto.
+ * Pojo simple que contiene información básica de un contacto.
  * 
  * @author fips
  *

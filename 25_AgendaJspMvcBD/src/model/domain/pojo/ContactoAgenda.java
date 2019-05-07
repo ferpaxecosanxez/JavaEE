@@ -1,7 +1,7 @@
 package model.domain.pojo;
 
 /**
- * Bean de dominio que representa información de las entidades CONTACTO y
+ * Pojo de dominio que representa información de las entidades CONTACTO y
  * TELEFONO.
  * 
  * @author fips

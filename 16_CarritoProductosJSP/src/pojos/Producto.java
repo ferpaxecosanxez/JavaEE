@@ -1,9 +1,9 @@
-package beans;
+package pojos;
 
 import java.math.BigDecimal;
 
 /**
- * Bean que representa un producto de carrito.
+ * Pojo que representa un producto de carrito.
  * 
  * @author fips
  *
