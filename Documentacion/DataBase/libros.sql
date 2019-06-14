@@ -43,7 +43,7 @@ create table Libro (
 	isbn int auto_increment,
     titulo varchar(100) not null,
     autor varchar(50) not null,
-    precio decimal(22,2) not null default 0.00,
+    precio decimal(6,2) not null default 0.00,
     paginas int not null,
     idTema int not null,
     constraint PK_Libro primary key (isbn),
