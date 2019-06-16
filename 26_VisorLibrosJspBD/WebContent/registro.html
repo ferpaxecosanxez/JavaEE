@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title>Registrarse</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header>
+		<h1>Registro nuevo</h1>
+	</header>
+	
+	<main>
+		<p>Rellene sus datos para darle de alta en el sistema:</p>
+		
+		<br/>
+		<form action="Controller?op=doRegistro" method="post" onsubmit="return validaFormulario(this)">
+			<span>Nombre:</span>
+			<input class="dato" type="text" name="nombre"/>
+			
+			<br/><br/>
+			<span>Apellido:</span>
+			<input class="dato" type="text" name="apellido"/>
+			
+			<br/><br/>
+			<span>DNI:</span>
+			<input class="dato" type="text" name="dni"/>
+			
+			<br/><br/>
+			<span>Usuario:</span>
+			<input class="dato" type="text" name="user"/>
+			
+			<br/><br/>
+			<span>Contraseña:</span>
+			<input class="dato"  type="password" name="pass"/>
+			
+			<br/><br/>
+			<div class="formFooter">
+				<input class="botonLargo" type="submit" value="Registrarse"/>
+			</div>
+		</form>
+		
+		<script src="js/functions.js"></script>
+	</main>
+</body>
+</html>

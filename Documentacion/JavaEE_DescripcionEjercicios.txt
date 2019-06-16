@@ -243,13 +243,26 @@ Añadimos validación JS de que exista una opción seleccionada en el ComboBox, 
 Ejercicio 25:
 La funcionalidad es la misma que el ejercicio anterior.
 En este ejercicio le agregamos la funcionalidad de elimnar un contacto y la implementación del proyecto la realizamos por capas independientes. Primer contacto con la arquitectura MVC, en este caso nos centramos en canalizar todas las peticiones a una clase principal que es la que sabe que vista o acción invocar.
-Es importante definir el encoding de la clase controlador, ya que esta clase será el primer punto de llegada de los valores de los aprámetros existentes, con ello nos aseguramos que el enconding de toda la aplicación está en UTF-8-
+Es importante definir el encoding de la clase controlador, ya que esta clase será el primer punto de llegada de los valores de los aprámetros existentes, con ello nos aseguramos que el enconding de toda la aplicación está en UTF-8.
 
 Las peticiones NO enviamos respuesta a CLIENTE y las dividimos en dos grupos:
 "to": Nos re-dirige a una nueva página HTML5 o JSP. Por ejemplo > Controlador?op=toIndex
 "do": Nos re-dirige a un servlet. Por ejemplo > Controlador?op=doVerContactos
 
 En el objeto de dominio "ContactoAgenda" agregamos el ID de CONTACTO ya que cuando elminamos un contacto de la tabla que visualiza el usuario tenemos que saber que Contacto ha eliminado. Tenemos que tener cuidado cuando eliminamos porque recordar que TELEFONO tiene FK a CONTACTO, por tanto, lo primero que haremos será borrar el registro telefono al cual hace referencia el contacto que el usuario ha seleccionado para eliminarlo, de lo contrario tendríamos error de violación de referencia.
+
+Ejercicio 26:
+Usamos objetos para representar los atributos del BEAN que se usa para el modelo de datos y para la gestión de los mismos usaremos el "patrón de factoría" que consite en definir interfaces que declaren los métodos a definir para cada Bean y su implemetación será visible a nivel de paquete, por tanto, se genera una clase genérica que si de acceso a cada una de las implementaciones que básicamente componen la capa de servicio.
+
+Por comodidad, cuando se genera la clase servicio/DAO (*Impl.java) para un bean, en su constructor generamos la URL de conexión a la BD, ya que dicha URL contiene muchos parámetros para la conexión JDBC. Cuando generamos un Usuario, este depende de un Cliente, por tanto, lo primero que se debe crear es un Cliente y obtener su ID autogenerado, por ello, en el método get(id) de Cliente recuperamos la PK que se ha generado pasándole un segundo parámetro al PreparedStatement, es decir, Statement.RETURN_GENERATED_KEYS.
+
+Para almacenar la Fecha-Hora (datetime) en la Base de Datos, que se correspode con el último acceso del usuario, tendremos que hacer uso de la clase "Timestamp" que nos facilita la transformación de LocalDateTime para almacenarla en Base de Datos.
+
+Al usar objetos y no datos primarios para los atributos de los bean, usaremos los métodos correspondientes para evitar el auto-casteo, por ejemplo el objeto Integer. Por otro lado, cuando usamos listas, estas siempre las inicializaremos a una lista vacía, con ello no evitamos error de acceso a listas nulas.
+
+Al igual que el ejercicio anterior, usaremos un controlador que centraliza todas las peticiones de acción o vista dándole formato UTF-8 antes de recibir los datos y enviar los mismos en tal formato.
+
+En cuanto a la vista, usaremos etiquetas HTML5 quitando algunas validaciones de Eclipse para que reconozca las nuevas etiquetas. Se añade estilo CSS a los ComboBox y no se añade valicación en formulario ya que la opción 0 se corresponde con listar todos los temas.
 
 ---------------------------------------------------------------------
 -- Uso de Base de Datos (DataSource en Tomcat)
