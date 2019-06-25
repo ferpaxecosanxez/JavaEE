@@ -265,5 +265,25 @@ Al igual que el ejercicio anterior, usaremos un controlador que centraliza todas
 En cuanto a la vista, usaremos etiquetas HTML5 quitando algunas validaciones de Eclipse para que reconozca las nuevas etiquetas. Se añade estilo CSS a los ComboBox y no se añade valicación en formulario ya que la opción 0 se corresponde con listar todos los temas.
 
 ---------------------------------------------------------------------
+-- Uso de JSTL y proyectos MAVEN
+---------------------------------------------------------------------
+
+Ejercicio 27:
+Es una copia del ejercicio 25 pero usamos proyecto MAVEN que nos facilita el uso de JARS que necesitemos mediante el POM y el REPOSITORY oficial de maven.
+
+La librerías que necesitamos son dos:
+JSTL que no se actualiza desde el 2015 y JDBC para MySql, la misma versión que tenemos en el JAR agregado en el proyecto "Documentación".
+
+JSTL = Jsp Standar Tag Library, donde podemos encontrar su funcionalidad en: "https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm"
+EL = Expresion Languaje, que es un complemente de JSTL (Es decir, está ya incluido en JSTL) y que nos facilita la vida en el acceso y gestión de variables de petición, sesión y aplicación, en el enlace siguiente podemos ver sus usos: "https://www.tutorialspoint.com/jsp/jsp_expression_language.htm".
+
+Tenemos que tener claro que JSTL y EL únicamente lo podemos usar en las JSP importando la librería, por tanto, una vez que tenemos en el POM las librerías (JAR) pasamos a importar la librería con su contexto, es decir:
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>, donde "c" es el tag para usarlo, por ejemplo:
+<c:set var="listaContactos" value="${requestScope._listaContactos}" />, donde declaramos una variable y le asignamos un valor desde variable de petición. Como observamos, tenemos que usar el símbolo dolar, ${ ... }, para la llamada.
+
+En fin, que los cambios los veremos en la única JSP del poryecto, es decir, en "visualizaContactos.jsp".
+
+---------------------------------------------------------------------
 -- Uso de Base de Datos (DataSource en Tomcat)
 ---------------------------------------------------------------------
